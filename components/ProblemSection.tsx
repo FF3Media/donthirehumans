@@ -4,6 +4,31 @@ import { motion } from 'framer-motion'
 
 const vp = { once: true, margin: '-100px' as const }
 
+const threats = [
+  {
+    stat: '85%',
+    label: 'of Fortune 500 companies will have deployed AI agents by end of 2026',
+    source: 'Gartner, 2025',
+  },
+  {
+    stat: '12×',
+    label: 'faster content and campaign execution for AI-powered brands vs. human teams',
+    source: 'McKinsey, 2025',
+  },
+  {
+    stat: '$4.4T',
+    label: 'in annual productivity unlocked by AI — most captured by early adopters',
+    source: 'Goldman Sachs, 2025',
+  },
+]
+
+const bullets = [
+  'Your competitor down the street just replaced their 5-person marketing team with 3 AI agents. Their costs dropped 80%.',
+  'They\'re publishing 10× more content, sending better emails, and ranking for keywords you haven\'t touched.',
+  'They\'re reinvesting those savings into paid acquisition — outspending you on every channel.',
+  'AI doesn\'t sleep. Doesn\'t call in sick. Doesn\'t go on vacation. It just executes.',
+]
+
 export default function ProblemSection() {
   return (
     <section
@@ -11,81 +36,132 @@ export default function ProblemSection() {
       style={{
         backgroundColor: 'var(--color-bg)',
         padding: 'clamp(80px, 10vw, 120px) clamp(24px, 5vw, 80px)',
+        borderTop: '1px solid #1A2422',
       }}
     >
-      <div
-        style={{
-          maxWidth: '1400px',
-          margin: '0 auto',
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 400px), 1fr))',
-          gap: 'clamp(40px, 6vw, 80px)',
-          alignItems: 'start',
-        }}
-      >
-        {/* Left */}
+      <div style={{ maxWidth: '1400px', margin: '0 auto' }}>
+
+        {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={vp}
           transition={{ duration: 0.6 }}
+          style={{ marginBottom: 'clamp(40px, 6vw, 64px)', maxWidth: '800px' }}
         >
+          <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '20px' }}>
+            <div style={{ width: '24px', height: '1px', backgroundColor: 'var(--color-accent)' }} />
+            <span style={{ fontFamily: 'var(--font-dm-mono)', fontSize: '11px', color: 'var(--color-accent)', letterSpacing: '0.15em', textTransform: 'uppercase' }}>
+              The Threat Is Already Here
+            </span>
+          </div>
           <h2
             id="problem-heading"
             style={{
-              fontFamily: 'var(--font-bebas)',
-              fontSize: 'clamp(40px, 6vw, 80px)',
-              lineHeight: 1,
-              letterSpacing: '0.02em',
+              fontFamily: 'var(--font-display)',
+              fontWeight: 700,
+              fontSize: 'clamp(36px, 5.5vw, 72px)',
+              lineHeight: 1.05,
+              letterSpacing: '-0.02em',
               color: 'var(--color-text)',
-              textTransform: 'uppercase',
+              marginBottom: '24px',
             }}
           >
-            THE OLD WAY IS BLEEDING YOU DRY.
+            AI Is Making Your Competitors<br />
+            <span style={{ color: 'var(--color-accent)' }}>Lethally Lean.</span>
           </h2>
+          <p style={{ fontFamily: 'var(--font-dm-mono)', fontSize: '14px', color: 'var(--color-muted)', lineHeight: 1.75, maxWidth: '580px' }}>
+            Business is changing faster than any point in history. The brands that adopt AI agents now will dominate their categories. The ones that don&apos;t will be priced out.
+          </p>
         </motion.div>
 
-        {/* Right */}
-        <div>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
-            {[
-              '$8,000–$25,000/mo agency retainers. Average results.',
-              '6–8 person marketing team just to stay competitive.',
-              'Weekly calls. Endless approvals. Slow execution.',
-            ].map((text, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={vp}
-                transition={{ duration: 0.6, delay: i * 0.1 }}
-                style={{
-                  fontFamily: 'var(--font-dm-mono)',
-                  fontSize: '13px',
-                  color: 'var(--color-text)',
-                  lineHeight: 1.7,
-                  display: 'flex',
-                  gap: '12px',
-                }}
-              >
-                <span style={{ color: 'var(--color-accent)', flexShrink: 0 }}>→</span>
-                <span>{text}</span>
-              </motion.div>
-            ))}
-          </div>
+        {/* Stats row */}
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 240px), 1fr))', gap: 'clamp(1px, 0.5vw, 1px)', marginBottom: 'clamp(48px, 7vw, 80px)', border: '1px solid #1F3330' }}>
+          {threats.map((t, i) => (
+            <motion.div
+              key={t.stat}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={vp}
+              transition={{ duration: 0.5, delay: i * 0.1 }}
+              style={{
+                padding: 'clamp(24px, 3.5vw, 40px)',
+                borderRight: i < threats.length - 1 ? '1px solid #1F3330' : 'none',
+                backgroundColor: 'var(--color-surface)',
+              }}
+            >
+              <div style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: 'clamp(40px, 5vw, 64px)', color: 'var(--color-accent)', lineHeight: 1, letterSpacing: '-0.02em', marginBottom: '12px' }}>
+                {t.stat}
+              </div>
+              <p style={{ fontFamily: 'var(--font-dm-mono)', fontSize: '12px', color: 'var(--color-text)', lineHeight: 1.65, marginBottom: '10px' }}>
+                {t.label}
+              </p>
+              <span style={{ fontFamily: 'var(--font-dm-mono)', fontSize: '10px', color: 'var(--color-muted)', letterSpacing: '0.08em' }}>
+                — {t.source}
+              </span>
+            </motion.div>
+          ))}
+        </div>
 
+        {/* Two-col layout */}
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 400px), 1fr))',
+          gap: 'clamp(40px, 6vw, 80px)',
+          alignItems: 'start',
+        }}>
+          {/* Left */}
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={vp}
-            transition={{ duration: 0.6, delay: 0.35 }}
-            style={{
-              width: '100%',
-              height: '1px',
-              backgroundColor: 'var(--color-accent)',
-              marginTop: '40px',
-            }}
-          />
+            transition={{ duration: 0.6 }}
+          >
+            <h3 style={{
+              fontFamily: 'var(--font-display)',
+              fontWeight: 700,
+              fontSize: 'clamp(28px, 3.5vw, 44px)',
+              lineHeight: 1.1,
+              letterSpacing: '-0.02em',
+              color: 'var(--color-text)',
+              marginBottom: '0',
+            }}>
+              While you&apos;re managing a team,<br />
+              <span style={{ color: 'var(--color-accent)' }}>they&apos;re running agents.</span>
+            </h3>
+          </motion.div>
+
+          {/* Right — bullets */}
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
+            {bullets.map((text, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, x: 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={vp}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
+                style={{ display: 'flex', gap: '14px', alignItems: 'flex-start' }}
+              >
+                <span style={{ color: 'var(--color-accent)', fontFamily: 'var(--font-dm-mono)', fontSize: '12px', flexShrink: 0, marginTop: '3px' }}>→</span>
+                <p style={{ fontFamily: 'var(--font-dm-mono)', fontSize: '13px', color: 'var(--color-text)', lineHeight: 1.7, margin: 0 }}>
+                  {text}
+                </p>
+              </motion.div>
+            ))}
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={vp}
+              transition={{ duration: 0.5, delay: 0.45 }}
+              style={{ marginTop: '12px', padding: '16px 20px', backgroundColor: 'var(--color-surface)', border: '1px solid var(--color-accent)', borderRadius: '2px' }}
+            >
+              <p style={{ fontFamily: 'var(--font-dm-mono)', fontSize: '12px', color: 'var(--color-accent)', lineHeight: 1.65, margin: 0, letterSpacing: '0.04em' }}>
+                The question isn&apos;t whether AI will change your industry.<br />
+                <strong>It already has. The only question is which side you&apos;re on.</strong>
+              </p>
+            </motion.div>
+          </div>
         </div>
       </div>
     </section>

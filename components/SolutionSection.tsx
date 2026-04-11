@@ -69,7 +69,7 @@ function AgentCard({
 
       {/* Headline */}
       <h3 style={{
-        fontFamily: 'var(--font-bebas)',
+        fontFamily: 'var(--font-display)',
         fontSize: 'clamp(36px, 4vw, 48px)',
         letterSpacing: '0.02em',
         color: 'var(--color-text)',
@@ -101,7 +101,7 @@ function AgentCard({
       )}
 
       {/* Stat */}
-      <div style={{ fontFamily: 'var(--font-bebas)', fontSize: 'clamp(64px, 8vw, 96px)', color: 'var(--color-accent)', lineHeight: 1, letterSpacing: '0.02em' }}>
+      <div style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(64px, 8vw, 96px)', color: 'var(--color-accent)', lineHeight: 1, letterSpacing: '0.02em' }}>
         {stat}
       </div>
       <div style={{ fontFamily: 'var(--font-dm-mono)', fontSize: '11px', color: 'var(--color-muted)', lineHeight: 1.6, marginTop: '8px', maxWidth: '260px' }}>
@@ -134,7 +134,7 @@ export default function SolutionSection() {
           <h2
             id="solution-heading"
             style={{
-              fontFamily: 'var(--font-bebas)',
+              fontFamily: 'var(--font-display)',
               fontSize: 'clamp(36px, 5.5vw, 80px)',
               letterSpacing: '0.02em',
               color: 'var(--color-text)',

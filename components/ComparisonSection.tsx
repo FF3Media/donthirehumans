@@ -77,7 +77,7 @@ export default function ComparisonSection() {
           <h2
             id="comparison-heading"
             style={{
-              fontFamily: 'var(--font-bebas)',
+              fontFamily: 'var(--font-display)',
               fontSize: 'clamp(36px, 5vw, 72px)',
               letterSpacing: '0.02em',
               color: 'var(--color-text)',

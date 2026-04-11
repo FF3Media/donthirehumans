@@ -79,7 +79,7 @@ export default function StatSection() {
         {/* Big number */}
         <div
           style={{
-            fontFamily: 'var(--font-bebas)',
+            fontFamily: 'var(--font-display)',
             fontSize: 'clamp(80px, 16vw, 200px)',
             lineHeight: 1,
             letterSpacing: '0.02em',
@@ -132,7 +132,7 @@ export default function StatSection() {
             <span style={{ fontFamily: 'var(--font-dm-mono)', fontSize: '12px', color: 'var(--color-accent)', letterSpacing: '0.1em', textTransform: 'uppercase' }}>
               Total
             </span>
-            <span style={{ fontFamily: 'var(--font-bebas)', fontSize: '28px', color: 'var(--color-accent)', letterSpacing: '0.04em' }}>
+            <span style={{ fontFamily: 'var(--font-display)', fontSize: '28px', color: 'var(--color-accent)', letterSpacing: '0.04em' }}>
               $47,000/mo
             </span>
           </div>

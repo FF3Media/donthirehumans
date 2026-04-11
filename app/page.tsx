@@ -4,7 +4,7 @@ import Nav from '@/components/Nav'
 import Hero from '@/components/Hero'
 import ProofTicker from '@/components/ProofTicker'
 import ProblemSection from '@/components/ProblemSection'
-import SolutionSection from '@/components/SolutionSection'
+import AgentsSection from '@/components/AgentsSection'
 import ComparisonSection from '@/components/ComparisonSection'
 import StatSection from '@/components/StatSection'
 import ProofSection from '@/components/ProofSection'
@@ -20,7 +20,7 @@ export default function Home() {
       <Hero />
       <ProofTicker />
       <ProblemSection />
-      <SolutionSection />
+      <AgentsSection />
       <ComparisonSection />
       <StatSection />
       <ProofSection />

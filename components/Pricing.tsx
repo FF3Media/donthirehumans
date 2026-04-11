@@ -111,7 +111,7 @@ export default function Pricing() {
           <h2
             id="pricing-heading"
             style={{
-              fontFamily: 'var(--font-bebas)',
+              fontFamily: 'var(--font-display)',
               fontSize: 'clamp(48px, 7vw, 100px)',
               letterSpacing: '0.02em',
               color: 'var(--color-text)',
@@ -197,7 +197,7 @@ export default function Pricing() {
               {/* Name */}
               <h3
                 style={{
-                  fontFamily: 'var(--font-bebas)',
+                  fontFamily: 'var(--font-display)',
                   fontSize: '40px',
                   letterSpacing: '0.02em',
                   color: 'var(--color-text)',
@@ -213,7 +213,7 @@ export default function Pricing() {
               <div style={{ display: 'flex', alignItems: 'baseline', gap: '4px' }}>
                 <span
                   style={{
-                    fontFamily: 'var(--font-bebas)',
+                    fontFamily: 'var(--font-display)',
                     fontSize: '64px',
                     color: 'var(--color-accent)',
                     lineHeight: 1,

@@ -1,11 +1,11 @@
 import type { Metadata } from 'next'
-import { Bebas_Neue, DM_Mono } from 'next/font/google'
+import { Space_Grotesk, DM_Mono } from 'next/font/google'
 import '../styles/globals.css'
 
-const bebasNeue = Bebas_Neue({
-  weight: '400',
+const spaceGrotesk = Space_Grotesk({
+  weight: ['400', '500', '600', '700'],
   subsets: ['latin'],
-  variable: '--font-bebas',
+  variable: '--font-display',
   display: 'swap',
 })
 
@@ -44,7 +44,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={`${bebasNeue.variable} ${dmMono.variable}`}>
+    <html lang="en" className={`${spaceGrotesk.variable} ${dmMono.variable}`}>
       <body>{children}</body>
     </html>
   )

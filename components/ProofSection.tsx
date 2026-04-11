@@ -59,7 +59,7 @@ export default function ProofSection() {
           <h2
             id="proof-heading"
             style={{
-              fontFamily: 'var(--font-bebas)',
+              fontFamily: 'var(--font-display)',
               fontSize: 'clamp(40px, 6vw, 80px)',
               letterSpacing: '0.02em',
               color: 'var(--color-text)',
@@ -110,7 +110,7 @@ export default function ProofSection() {
               </p>
 
               {/* Big result */}
-              <div style={{ fontFamily: 'var(--font-bebas)', fontSize: 'clamp(48px, 7vw, 72px)', color: 'var(--color-accent)', lineHeight: 1, letterSpacing: '0.02em', marginBottom: '8px' }}>
+              <div style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(48px, 7vw, 72px)', color: 'var(--color-accent)', lineHeight: 1, letterSpacing: '0.02em', marginBottom: '8px' }}>
                 {r.result}
               </div>
               <p style={{ fontFamily: 'var(--font-dm-mono)', fontSize: '11px', color: 'var(--color-muted)', letterSpacing: '0.06em', marginBottom: '24px' }}>

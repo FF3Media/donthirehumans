@@ -38,7 +38,7 @@ export default function FinalCTA() {
         <h2
           id="final-cta-heading"
           style={{
-            fontFamily: 'var(--font-bebas)',
+            fontFamily: 'var(--font-display)',
             fontSize: 'clamp(64px, 10vw, 140px)',
             letterSpacing: '0.02em',
             color: 'var(--color-text)',

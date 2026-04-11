@@ -46,7 +46,7 @@ export default function HowItWorks() {
           <h2
             id="how-heading"
             style={{
-              fontFamily: 'var(--font-bebas)',
+              fontFamily: 'var(--font-display)',
               fontSize: 'clamp(48px, 7vw, 100px)',
               letterSpacing: '0.02em',
               color: 'var(--color-text)',
@@ -108,7 +108,7 @@ export default function HowItWorks() {
                 <div
                   aria-hidden="true"
                   style={{
-                    fontFamily: 'var(--font-bebas)',
+                    fontFamily: 'var(--font-display)',
                     fontSize: '80px',
                     color: 'var(--color-accent)',
                     opacity: 0.2,
@@ -135,7 +135,7 @@ export default function HowItWorks() {
 
                 <h3
                   style={{
-                    fontFamily: 'var(--font-bebas)',
+                    fontFamily: 'var(--font-display)',
                     fontSize: '32px',
                     letterSpacing: '0.02em',
                     color: 'var(--color-text)',
