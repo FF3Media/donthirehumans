@@ -17,7 +17,7 @@ export default function Hero() {
         overflow: 'hidden',
       }}
     >
-      {/* Status indicator — top right */}
+      {/* Status indicator */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -32,72 +32,31 @@ export default function Hero() {
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-end', gap: '8px' }}>
           <div
             className="pulse-dot"
-            style={{
-              width: '7px',
-              height: '7px',
-              borderRadius: '50%',
-              backgroundColor: 'var(--color-accent)',
-              flexShrink: 0,
-            }}
+            style={{ width: '7px', height: '7px', borderRadius: '50%', backgroundColor: 'var(--color-accent)', flexShrink: 0 }}
           />
-          <span
-            style={{
-              fontFamily: 'var(--font-dm-mono)',
-              fontSize: '11px',
-              color: 'var(--color-text)',
-              letterSpacing: '0.08em',
-            }}
-          >
+          <span style={{ fontFamily: 'var(--font-dm-mono)', fontSize: '11px', color: 'var(--color-text)', letterSpacing: '0.08em' }}>
             2 AGENTS RUNNING
           </span>
         </div>
-        <div
-          style={{
-            fontFamily: 'var(--font-dm-mono)',
-            fontSize: '10px',
-            color: 'var(--color-muted)',
-            letterSpacing: '0.1em',
-            marginTop: '4px',
-          }}
-        >
+        <div style={{ fontFamily: 'var(--font-dm-mono)', fontSize: '10px', color: 'var(--color-muted)', letterSpacing: '0.1em', marginTop: '4px' }}>
           SYSTEM ONLINE
         </div>
       </motion.div>
 
-      {/* Eyebrow — tells you exactly what this is before you read the headline */}
+      {/* Eyebrow */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, ease: 'easeOut', delay: 0.1 }}
-        style={{
-          display: 'flex',
-          alignItems: 'center',
-          gap: '12px',
-          marginBottom: 'clamp(16px, 2.5vw, 28px)',
-        }}
+        style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: 'clamp(16px, 2.5vw, 28px)' }}
       >
-        <div
-          style={{
-            width: '24px',
-            height: '1px',
-            backgroundColor: 'var(--color-accent)',
-            flexShrink: 0,
-          }}
-        />
-        <span
-          style={{
-            fontFamily: 'var(--font-dm-mono)',
-            fontSize: '11px',
-            color: 'var(--color-accent)',
-            letterSpacing: '0.15em',
-            textTransform: 'uppercase',
-          }}
-        >
-          AI Marketing Agents — For DTC Ecommerce Brands
+        <div style={{ width: '24px', height: '1px', backgroundColor: 'var(--color-accent)', flexShrink: 0 }} />
+        <span style={{ fontFamily: 'var(--font-dm-mono)', fontSize: '11px', color: 'var(--color-accent)', letterSpacing: '0.15em', textTransform: 'uppercase' }}>
+          AI Marketing Agents — For DTC Brands Doing $1M–$10M
         </span>
       </motion.div>
 
-      {/* Hero Headline */}
+      {/* Headline */}
       <h1 style={{ margin: 0 }}>
         {["DON'T HIRE", 'HUMANS.'].map((line, i) => (
           <motion.div
@@ -120,7 +79,7 @@ export default function Hero() {
         ))}
       </h1>
 
-      {/* Subline — bigger, readable, full text color */}
+      {/* Subline */}
       <motion.p
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
@@ -139,22 +98,42 @@ export default function Hero() {
         Built for DTC brands doing $1M–$10M. No retainers. No humans.
       </motion.p>
 
-      {/* CTA + price anchor row */}
+      {/* Done-for-you callout */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, ease: 'easeOut', delay: 0.78 }}
+        style={{
+          display: 'inline-flex',
+          alignItems: 'center',
+          gap: '10px',
+          marginTop: '16px',
+          padding: '10px 16px',
+          border: '1px solid #1F3330',
+          backgroundColor: 'var(--color-surface)',
+          borderRadius: '2px',
+          alignSelf: 'flex-start',
+        }}
+      >
+        <div
+          className="pulse-dot"
+          style={{ width: '6px', height: '6px', borderRadius: '50%', backgroundColor: 'var(--color-accent)', flexShrink: 0 }}
+        />
+        <span style={{ fontFamily: 'var(--font-dm-mono)', fontSize: '11px', color: 'var(--color-accent)', letterSpacing: '0.1em' }}>
+          WE RUN THE AGENTS. YOU NEVER LOG IN.
+        </span>
+      </motion.div>
+
+      {/* CTA row */}
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, ease: 'easeOut', delay: 0.8 }}
-        style={{
-          marginTop: 'clamp(24px, 3vw, 36px)',
-          display: 'flex',
-          alignItems: 'center',
-          flexWrap: 'wrap',
-          gap: '24px',
-        }}
+        transition={{ duration: 0.6, ease: 'easeOut', delay: 0.9 }}
+        style={{ marginTop: 'clamp(24px, 3vw, 36px)', display: 'flex', alignItems: 'center', flexWrap: 'wrap', gap: '24px' }}
       >
         <a
           href="#pricing"
-          aria-label="Book a free audit"
+          aria-label="Book a free 15-minute audit"
           style={{
             fontFamily: 'var(--font-dm-mono)',
             fontSize: '12px',
@@ -169,46 +148,15 @@ export default function Hero() {
             display: 'inline-block',
             flexShrink: 0,
           }}
-          onMouseEnter={(e) => {
-            const el = e.currentTarget
-            el.style.background = 'var(--color-accent)'
-            el.style.color = '#000'
-          }}
-          onMouseLeave={(e) => {
-            const el = e.currentTarget
-            el.style.background = 'transparent'
-            el.style.color = 'var(--color-accent)'
-          }}
+          onMouseEnter={(e) => { e.currentTarget.style.background = 'var(--color-accent)'; e.currentTarget.style.color = '#000' }}
+          onMouseLeave={(e) => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.color = 'var(--color-accent)' }}
         >
           BOOK A FREE AUDIT →
         </a>
 
-        {/* Inline proof strip */}
-        <div
-          style={{
-            display: 'flex',
-            alignItems: 'center',
-            gap: '20px',
-            flexWrap: 'wrap',
-          }}
-        >
-          {[
-            'Starts at $750/mo',
-            'Deployed in 7 days',
-            'No contracts',
-          ].map((item, i) => (
-            <span
-              key={i}
-              style={{
-                fontFamily: 'var(--font-dm-mono)',
-                fontSize: '11px',
-                color: 'var(--color-muted)',
-                letterSpacing: '0.08em',
-                display: 'flex',
-                alignItems: 'center',
-                gap: '6px',
-              }}
-            >
+        <div style={{ display: 'flex', alignItems: 'center', gap: '20px', flexWrap: 'wrap' }}>
+          {['Starts at $750/mo', 'Deployed in 7 days', 'No contracts'].map((item, i) => (
+            <span key={i} style={{ fontFamily: 'var(--font-dm-mono)', fontSize: '11px', color: 'var(--color-muted)', letterSpacing: '0.08em', display: 'flex', alignItems: 'center', gap: '6px' }}>
               <span style={{ color: 'var(--color-accent)' }}>→</span>
               {item}
             </span>

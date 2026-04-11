@@ -3,6 +3,13 @@
 import { motion } from 'framer-motion'
 import { useState } from 'react'
 
+const auditItems = [
+  'We review your current email flows and identify revenue gaps',
+  'We audit your SEO and AI search (GEO) visibility vs. competitors',
+  'We show you exactly what an agent would do — with specifics, not slides',
+  'You decide if you want to move forward. No pressure. No follow-up spam.',
+]
+
 export default function FinalCTA() {
   const [hovered, setHovered] = useState(false)
 
@@ -26,7 +33,7 @@ export default function FinalCTA() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: '-100px' }}
         transition={{ duration: 0.6, ease: 'easeOut' }}
-        style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 'clamp(24px, 3vw, 40px)' }}
+        style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 'clamp(20px, 3vw, 32px)', maxWidth: '700px' }}
       >
         <h2
           id="final-cta-heading"
@@ -50,16 +57,33 @@ export default function FinalCTA() {
             fontFamily: 'var(--font-dm-mono)',
             fontSize: '14px',
             color: 'var(--color-muted)',
-            maxWidth: '440px',
+            maxWidth: '480px',
             lineHeight: 1.7,
           }}
         >
-          Book a free 15-minute audit. We&apos;ll show you exactly what an AI agent would do for your DTC brand — no pitch, no pressure.
+          Book a free 15-minute audit. Here&apos;s exactly what happens on the call:
         </p>
 
+        {/* Audit breakdown */}
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', width: '100%', maxWidth: '520px', textAlign: 'left' }}>
+          {auditItems.map((item, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, x: -16 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, margin: '-100px' }}
+              transition={{ duration: 0.4, delay: 0.2 + i * 0.08 }}
+              style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}
+            >
+              <span style={{ color: 'var(--color-accent)', fontFamily: 'var(--font-dm-mono)', fontSize: '12px', flexShrink: 0, marginTop: '2px' }}>→</span>
+              <span style={{ fontFamily: 'var(--font-dm-mono)', fontSize: '12px', color: 'var(--color-text)', lineHeight: 1.65 }}>{item}</span>
+            </motion.div>
+          ))}
+        </div>
+
         <a
-          href="#pricing"
-          aria-label="Book a free audit"
+          href="mailto:audit@frankmedia.ai"
+          aria-label="Book a free 15-minute audit"
           style={{
             fontFamily: 'var(--font-dm-mono)',
             fontSize: '13px',
@@ -72,11 +96,12 @@ export default function FinalCTA() {
             textDecoration: 'none',
             transition: 'background 200ms, color 200ms',
             display: 'inline-block',
+            marginTop: '8px',
           }}
           onMouseEnter={() => setHovered(true)}
           onMouseLeave={() => setHovered(false)}
         >
-          BOOK A FREE AUDIT →
+          BOOK A FREE 15-MINUTE AUDIT →
         </a>
 
         <p

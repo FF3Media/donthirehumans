@@ -277,9 +277,9 @@ export default function Pricing() {
             lineHeight: 1.7,
           }}
         >
-          First 30 days guaranteed. If we don&apos;t deliver, you don&apos;t pay.
+          First 30 days guaranteed. If we don&apos;t deliver measurable results, you don&apos;t pay.
           <br />
-          No contracts. No lock-in.
+          No contracts. No lock-in. Cancel anytime with 30 days notice.
         </motion.p>
       </div>
     </section>

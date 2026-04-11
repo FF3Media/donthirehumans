@@ -9,27 +9,35 @@ function easeOutExpo(t: number): number {
 
 function useCountUp(target: number, duration: number, start: boolean) {
   const [value, setValue] = useState(0)
-
   useEffect(() => {
     if (!start) return
     let startTime: number | null = null
     let raf: number
-
     function step(timestamp: number) {
       if (!startTime) startTime = timestamp
       const elapsed = timestamp - startTime
       const progress = Math.min(elapsed / duration, 1)
-      const eased = easeOutExpo(progress)
-      setValue(Math.round(eased * target))
+      setValue(Math.round(easeOutExpo(progress) * target))
       if (progress < 1) raf = requestAnimationFrame(step)
     }
-
     raf = requestAnimationFrame(step)
     return () => cancelAnimationFrame(raf)
   }, [start, target, duration])
-
   return value
 }
+
+const breakdown = [
+  { label: 'Head of Marketing / CMO (fractional)', cost: 12000 },
+  { label: 'Email Marketing Manager', cost: 6000 },
+  { label: 'SEO Agency Retainer', cost: 5500 },
+  { label: 'Klaviyo Partner Agency', cost: 4500 },
+  { label: 'Content Team (freelance)', cost: 7500 },
+  { label: 'Paid Social Manager', cost: 5500 },
+  { label: 'Analytics & Reporting', cost: 3000 },
+  { label: 'Tools & Software Stack', cost: 3000 },
+]
+
+const vp = { once: true, margin: '-100px' as const }
 
 export default function StatSection() {
   const ref = useRef<HTMLDivElement>(null)
@@ -39,23 +47,22 @@ export default function StatSection() {
   return (
     <section
       ref={ref}
-      aria-label="Cost comparison stat"
+      aria-label="Cost comparison"
       style={{
-        width: '100vw',
+        width: '100%',
         backgroundColor: 'var(--color-bg)',
         padding: 'clamp(80px, 12vw, 140px) clamp(24px, 5vw, 80px)',
-        textAlign: 'center',
         borderTop: '1px solid #1A2422',
         borderBottom: '1px solid #1A2422',
       }}
     >
-      <motion.div
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: '-100px' }}
-        transition={{ duration: 0.6, ease: 'easeOut' }}
-      >
-        <p
+      <div style={{ maxWidth: '1400px', margin: '0 auto' }}>
+        {/* Label */}
+        <motion.p
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={vp}
+          transition={{ duration: 0.6 }}
           style={{
             fontFamily: 'var(--font-dm-mono)',
             fontSize: '11px',
@@ -63,11 +70,13 @@ export default function StatSection() {
             letterSpacing: '0.2em',
             textTransform: 'uppercase',
             marginBottom: 'clamp(16px, 3vw, 32px)',
+            textAlign: 'center',
           }}
         >
-          AVERAGE MONTHLY COST OF THE TEAM WE REPLACED
-        </p>
+          Average monthly cost of the marketing team we replaced
+        </motion.p>
 
+        {/* Big number */}
         <div
           style={{
             fontFamily: 'var(--font-bebas)',
@@ -75,36 +84,76 @@ export default function StatSection() {
             lineHeight: 1,
             letterSpacing: '0.02em',
             color: 'var(--color-text)',
+            textAlign: 'center',
           }}
           aria-label={`$${count.toLocaleString()}`}
         >
           ${count.toLocaleString()}
         </div>
 
-        <p
+        {/* Breakdown table */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={vp}
+          transition={{ duration: 0.6, delay: 0.3 }}
           style={{
-            fontFamily: 'var(--font-dm-mono)',
-            fontSize: '13px',
-            color: 'var(--color-accent)',
-            marginTop: 'clamp(16px, 3vw, 32px)',
-            letterSpacing: '0.05em',
+            maxWidth: '640px',
+            margin: 'clamp(32px, 5vw, 56px) auto 0',
+            borderTop: '1px solid #1F3330',
           }}
         >
-          Our agents start at $750/mo.
-        </p>
+          {breakdown.map((item, i) => (
+            <motion.div
+              key={item.label}
+              initial={{ opacity: 0, x: -16 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={vp}
+              transition={{ duration: 0.4, delay: 0.35 + i * 0.06 }}
+              style={{
+                display: 'flex',
+                justifyContent: 'space-between',
+                alignItems: 'center',
+                padding: '12px 0',
+                borderBottom: '1px solid #1A2422',
+              }}
+            >
+              <span style={{ fontFamily: 'var(--font-dm-mono)', fontSize: '12px', color: 'var(--color-muted)', letterSpacing: '0.04em' }}>
+                {item.label}
+              </span>
+              <span style={{ fontFamily: 'var(--font-dm-mono)', fontSize: '12px', color: 'var(--color-text)', letterSpacing: '0.06em', flexShrink: 0, marginLeft: '24px' }}>
+                ${item.cost.toLocaleString()}/mo
+              </span>
+            </motion.div>
+          ))}
 
-        <p
-          style={{
-            fontFamily: 'var(--font-dm-mono)',
-            fontSize: '11px',
-            color: 'var(--color-muted)',
-            marginTop: '12px',
-            letterSpacing: '0.05em',
-          }}
+          {/* Total row */}
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '16px 0 0' }}>
+            <span style={{ fontFamily: 'var(--font-dm-mono)', fontSize: '12px', color: 'var(--color-accent)', letterSpacing: '0.1em', textTransform: 'uppercase' }}>
+              Total
+            </span>
+            <span style={{ fontFamily: 'var(--font-bebas)', fontSize: '28px', color: 'var(--color-accent)', letterSpacing: '0.04em' }}>
+              $47,000/mo
+            </span>
+          </div>
+        </motion.div>
+
+        {/* Comparison line */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={vp}
+          transition={{ duration: 0.6, delay: 0.8 }}
+          style={{ textAlign: 'center', marginTop: 'clamp(32px, 5vw, 56px)' }}
         >
-          No retainer. No headcount. No bullshit.
-        </p>
-      </motion.div>
+          <p style={{ fontFamily: 'var(--font-dm-mono)', fontSize: '13px', color: 'var(--color-accent)', letterSpacing: '0.05em' }}>
+            Our agents start at $750/mo.
+          </p>
+          <p style={{ fontFamily: 'var(--font-dm-mono)', fontSize: '11px', color: 'var(--color-muted)', marginTop: '10px', letterSpacing: '0.05em' }}>
+            No retainer. No headcount. No bullshit.
+          </p>
+        </motion.div>
+      </div>
     </section>
   )
 }
