@@ -16,7 +16,7 @@ function CTAButton({
     <button
       style={{
         width: '100%',
-        fontFamily: 'var(--font-dm-mono)',
+        fontFamily: 'var(--font-display)',
         fontSize: '12px',
         letterSpacing: '0.1em',
         padding: '14px 20px',
@@ -96,7 +96,7 @@ export default function Pricing() {
       style={{
         backgroundColor: 'var(--color-bg)',
         padding: 'clamp(80px, 10vw, 120px) clamp(24px, 5vw, 80px)',
-        borderTop: '1px solid #1A2422',
+        borderTop: '1px solid #222222',
       }}
     >
       <div style={{ maxWidth: '1400px', margin: '0 auto' }}>
@@ -124,7 +124,7 @@ export default function Pricing() {
           </h2>
           <p
             style={{
-              fontFamily: 'var(--font-dm-mono)',
+              fontFamily: 'var(--font-display)',
               fontSize: '13px',
               color: 'var(--color-muted)',
               lineHeight: 1.7,
@@ -153,7 +153,7 @@ export default function Pricing() {
                 backgroundColor: 'var(--color-surface)',
                 border: plan.highlighted
                   ? '1px solid var(--color-accent)'
-                  : '1px solid #1F3330',
+                  : '1px solid #222222',
                 padding: 'clamp(24px, 3.5vw, 40px)',
                 borderRadius: '2px',
                 position: 'relative',
@@ -169,7 +169,7 @@ export default function Pricing() {
                     position: 'absolute',
                     top: '0',
                     right: '0',
-                    fontFamily: 'var(--font-dm-mono)',
+                    fontFamily: 'var(--font-display)',
                     fontSize: '9px',
                     letterSpacing: '0.1em',
                     backgroundColor: 'var(--color-accent)',
@@ -185,7 +185,7 @@ export default function Pricing() {
               {/* Label */}
               <div
                 style={{
-                  fontFamily: 'var(--font-dm-mono)',
+                  fontFamily: 'var(--font-display)',
                   fontSize: '11px',
                   color: 'var(--color-accent)',
                   letterSpacing: '0.1em',
@@ -224,7 +224,7 @@ export default function Pricing() {
                 </span>
                 <span
                   style={{
-                    fontFamily: 'var(--font-dm-mono)',
+                    fontFamily: 'var(--font-display)',
                     fontSize: '14px',
                     color: 'var(--color-muted)',
                   }}
@@ -242,7 +242,7 @@ export default function Pricing() {
                   <li
                     key={f}
                     style={{
-                      fontFamily: 'var(--font-dm-mono)',
+                      fontFamily: 'var(--font-display)',
                       fontSize: '12px',
                       color: 'var(--color-text)',
                       display: 'flex',
@@ -269,7 +269,7 @@ export default function Pricing() {
           viewport={{ once: true, margin: '-100px' }}
           transition={{ duration: 0.6, ease: 'easeOut', delay: 0.3 }}
           style={{
-            fontFamily: 'var(--font-dm-mono)',
+            fontFamily: 'var(--font-display)',
             fontSize: '11px',
             color: 'var(--color-muted)',
             textAlign: 'center',

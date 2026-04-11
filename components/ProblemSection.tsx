@@ -36,7 +36,7 @@ export default function ProblemSection() {
       style={{
         backgroundColor: 'var(--color-bg)',
         padding: 'clamp(80px, 10vw, 120px) clamp(24px, 5vw, 80px)',
-        borderTop: '1px solid #1A2422',
+        borderTop: '1px solid #222222',
       }}
     >
       <div style={{ maxWidth: '1400px', margin: '0 auto' }}>
@@ -51,7 +51,7 @@ export default function ProblemSection() {
         >
           <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '20px' }}>
             <div style={{ width: '24px', height: '1px', backgroundColor: 'var(--color-accent)' }} />
-            <span style={{ fontFamily: 'var(--font-dm-mono)', fontSize: '11px', color: 'var(--color-accent)', letterSpacing: '0.15em', textTransform: 'uppercase' }}>
+            <span style={{ fontFamily: 'var(--font-display)', fontSize: '11px', color: 'var(--color-accent)', letterSpacing: '0.15em', textTransform: 'uppercase' }}>
               The Threat Is Already Here
             </span>
           </div>
@@ -62,7 +62,7 @@ export default function ProblemSection() {
               fontWeight: 700,
               fontSize: 'clamp(36px, 5.5vw, 72px)',
               lineHeight: 1.05,
-              letterSpacing: '-0.02em',
+              letterSpacing: '-0.03em',
               color: 'var(--color-text)',
               marginBottom: '24px',
             }}
@@ -70,13 +70,13 @@ export default function ProblemSection() {
             AI Is Making Your Competitors<br />
             <span style={{ color: 'var(--color-accent)' }}>Lethally Lean.</span>
           </h2>
-          <p style={{ fontFamily: 'var(--font-dm-mono)', fontSize: '14px', color: 'var(--color-muted)', lineHeight: 1.75, maxWidth: '580px' }}>
+          <p style={{ fontFamily: 'var(--font-display)', fontSize: '14px', color: 'var(--color-muted)', lineHeight: 1.75, maxWidth: '580px' }}>
             Business is changing faster than any point in history. The brands that adopt AI agents now will dominate their categories. The ones that don&apos;t will be priced out.
           </p>
         </motion.div>
 
         {/* Stats row */}
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 240px), 1fr))', gap: 'clamp(1px, 0.5vw, 1px)', marginBottom: 'clamp(48px, 7vw, 80px)', border: '1px solid #1F3330' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 240px), 1fr))', gap: '12px', marginBottom: 'clamp(48px, 7vw, 80px)' }}>
           {threats.map((t, i) => (
             <motion.div
               key={t.stat}
@@ -86,17 +86,18 @@ export default function ProblemSection() {
               transition={{ duration: 0.5, delay: i * 0.1 }}
               style={{
                 padding: 'clamp(24px, 3.5vw, 40px)',
-                borderRight: i < threats.length - 1 ? '1px solid #1F3330' : 'none',
+                borderRadius: '16px',
                 backgroundColor: 'var(--color-surface)',
+                border: '1px solid rgba(0,0,0,0.08)',
               }}
             >
-              <div style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: 'clamp(40px, 5vw, 64px)', color: 'var(--color-accent)', lineHeight: 1, letterSpacing: '-0.02em', marginBottom: '12px' }}>
+              <div style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: 'clamp(48px, 5.5vw, 72px)', color: 'var(--color-accent)', lineHeight: 1, letterSpacing: '-0.03em', marginBottom: '12px' }}>
                 {t.stat}
               </div>
-              <p style={{ fontFamily: 'var(--font-dm-mono)', fontSize: '12px', color: 'var(--color-text)', lineHeight: 1.65, marginBottom: '10px' }}>
+              <p style={{ fontFamily: 'var(--font-display)', fontSize: '12px', color: 'var(--color-text)', lineHeight: 1.65, marginBottom: '10px' }}>
                 {t.label}
               </p>
-              <span style={{ fontFamily: 'var(--font-dm-mono)', fontSize: '10px', color: 'var(--color-muted)', letterSpacing: '0.08em' }}>
+              <span style={{ fontFamily: 'var(--font-display)', fontSize: '10px', color: 'var(--color-muted)', letterSpacing: '0.08em' }}>
                 — {t.source}
               </span>
             </motion.div>
@@ -120,9 +121,9 @@ export default function ProblemSection() {
             <h3 style={{
               fontFamily: 'var(--font-display)',
               fontWeight: 700,
-              fontSize: 'clamp(28px, 3.5vw, 44px)',
+              fontSize: 'clamp(28px, 3.5vw, 48px)',
               lineHeight: 1.1,
-              letterSpacing: '-0.02em',
+              letterSpacing: '-0.03em',
               color: 'var(--color-text)',
               marginBottom: '0',
             }}>
@@ -142,8 +143,8 @@ export default function ProblemSection() {
                 transition={{ duration: 0.5, delay: i * 0.1 }}
                 style={{ display: 'flex', gap: '14px', alignItems: 'flex-start' }}
               >
-                <span style={{ color: 'var(--color-accent)', fontFamily: 'var(--font-dm-mono)', fontSize: '12px', flexShrink: 0, marginTop: '3px' }}>→</span>
-                <p style={{ fontFamily: 'var(--font-dm-mono)', fontSize: '13px', color: 'var(--color-text)', lineHeight: 1.7, margin: 0 }}>
+                <span style={{ color: 'var(--color-accent)', fontFamily: 'var(--font-display)', fontSize: '12px', flexShrink: 0, marginTop: '3px' }}>→</span>
+                <p style={{ fontFamily: 'var(--font-display)', fontSize: '13px', color: 'var(--color-text)', lineHeight: 1.7, margin: 0 }}>
                   {text}
                 </p>
               </motion.div>
@@ -156,7 +157,7 @@ export default function ProblemSection() {
               transition={{ duration: 0.5, delay: 0.45 }}
               style={{ marginTop: '12px', padding: '16px 20px', backgroundColor: 'var(--color-surface)', border: '1px solid var(--color-accent)', borderRadius: '2px' }}
             >
-              <p style={{ fontFamily: 'var(--font-dm-mono)', fontSize: '12px', color: 'var(--color-accent)', lineHeight: 1.65, margin: 0, letterSpacing: '0.04em' }}>
+              <p style={{ fontFamily: 'var(--font-display)', fontSize: '12px', color: 'var(--color-accent)', lineHeight: 1.65, margin: 0, letterSpacing: '0.04em' }}>
                 The question isn&apos;t whether AI will change your industry.<br />
                 <strong>It already has. The only question is which side you&apos;re on.</strong>
               </p>

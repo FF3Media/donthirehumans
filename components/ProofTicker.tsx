@@ -28,8 +28,8 @@ export default function ProofTicker() {
         backgroundColor: 'var(--color-surface)',
         overflow: 'hidden',
         padding: '18px 0',
-        borderTop: '1px solid #1F3330',
-        borderBottom: '1px solid #1F3330',
+        borderTop: '1px solid #222222',
+        borderBottom: '1px solid #222222',
       }}
     >
       <div
@@ -44,7 +44,7 @@ export default function ProofTicker() {
           <span
             key={i}
             style={{
-              fontFamily: 'var(--font-dm-mono)',
+              fontFamily: 'var(--font-display)',
               fontSize: '12px',
               letterSpacing: '0.12em',
               color: item.accent ? 'var(--color-accent)' : 'var(--color-text)',

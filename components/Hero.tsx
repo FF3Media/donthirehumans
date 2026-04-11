@@ -12,55 +12,63 @@ export default function Hero() {
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
-        padding: 'clamp(100px, 10vw, 140px) clamp(24px, 5vw, 80px) clamp(60px, 8vw, 100px)',
+        alignItems: 'center',
+        textAlign: 'center',
+        padding: 'clamp(120px, 12vw, 160px) clamp(24px, 5vw, 80px) clamp(80px, 10vw, 120px)',
         position: 'relative',
         overflow: 'hidden',
       }}
     >
-      {/* Status indicator */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.4, delay: 0.2 }}
-        style={{ position: 'absolute', top: 'clamp(80px, 10vw, 110px)', right: 'clamp(24px, 5vw, 80px)', textAlign: 'right' }}
-      >
-        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-end', gap: '8px' }}>
-          <div className="pulse-dot" style={{ width: '7px', height: '7px', borderRadius: '50%', backgroundColor: 'var(--color-accent)', flexShrink: 0 }} />
-          <span style={{ fontFamily: 'var(--font-dm-mono)', fontSize: '11px', color: 'var(--color-text)', letterSpacing: '0.08em' }}>3 AGENTS RUNNING</span>
-        </div>
-        <div style={{ fontFamily: 'var(--font-dm-mono)', fontSize: '10px', color: 'var(--color-muted)', letterSpacing: '0.1em', marginTop: '4px' }}>SYSTEM ONLINE</div>
-      </motion.div>
+      {/* Subtle glow — light mode */}
+      <div style={{
+        position: 'absolute',
+        top: '40%',
+        left: '50%',
+        transform: 'translate(-50%, -50%)',
+        width: '700px',
+        height: '700px',
+        background: 'radial-gradient(circle, rgba(36,138,61,0.07) 0%, transparent 70%)',
+        pointerEvents: 'none',
+      }} />
 
-      {/* Eyebrow */}
+      {/* Status pill */}
       <motion.div
-        initial={{ opacity: 0, y: 20 }}
+        initial={{ opacity: 0, y: -10 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, ease: 'easeOut', delay: 0.1 }}
-        style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: 'clamp(20px, 3vw, 32px)' }}
+        transition={{ duration: 0.5, delay: 0.1 }}
+        style={{
+          display: 'inline-flex',
+          alignItems: 'center',
+          gap: '8px',
+          padding: '8px 18px',
+          borderRadius: '980px',
+          border: '1px solid rgba(36,138,61,0.25)',
+          backgroundColor: 'rgba(36,138,61,0.06)',
+          marginBottom: 'clamp(24px, 4vw, 40px)',
+        }}
       >
-        <div style={{ width: '24px', height: '1px', backgroundColor: 'var(--color-accent)', flexShrink: 0 }} />
-        <span style={{ fontFamily: 'var(--font-dm-mono)', fontSize: '11px', color: 'var(--color-accent)', letterSpacing: '0.15em', textTransform: 'uppercase' }}>
-          Frank Media — AI Agents for DTC Brands Doing $1M–$10M
+        <div className="pulse-dot" style={{ width: '7px', height: '7px', borderRadius: '50%', backgroundColor: 'var(--color-accent)', flexShrink: 0 }} />
+        <span style={{ fontFamily: 'var(--font-display)', fontWeight: 500, fontSize: '14px', color: 'var(--color-accent)', letterSpacing: '-0.01em' }}>
+          AI Agents for DTC Brands
         </span>
       </motion.div>
 
-      {/* Headline — clear, immediate, descriptive */}
-      <h1 style={{ margin: 0 }}>
-        {['PUSH A BUTTON', 'AND RUN YOUR BUSINESS', 'USING AI AGENTS.'].map((line, i) => (
+      {/* Headline */}
+      <h1 style={{ margin: 0, maxWidth: '960px' }}>
+        {['AI Agents that power', 'your business.'].map((line, i) => (
           <motion.div
             key={line}
-            initial={{ opacity: 0, y: 50 }}
+            initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, ease: 'easeOut', delay: 0.25 + i * 0.12 }}
+            transition={{ duration: 0.8, ease: 'easeOut', delay: 0.2 + i * 0.1 }}
             style={{
               display: 'block',
               fontFamily: 'var(--font-display)',
-              fontWeight: 700,
-              fontSize: 'clamp(40px, 7vw, 100px)',
+              fontWeight: 800,
+              fontSize: 'clamp(52px, 8.5vw, 120px)',
               lineHeight: 1.0,
-              letterSpacing: '-0.02em',
-              color: i === 2 ? 'var(--color-accent)' : 'var(--color-text)',
-              textTransform: 'uppercase',
+              letterSpacing: '-0.04em',
+              color: i === 1 ? 'var(--color-accent)' : 'var(--color-text)',
             }}
           >
             {line}
@@ -68,85 +76,108 @@ export default function Hero() {
         ))}
       </h1>
 
-      {/* Subline — tell them exactly what you do */}
-      <motion.p
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, ease: 'easeOut', delay: 0.55 }}
-        style={{
-          fontFamily: 'var(--font-dm-mono)',
-          fontSize: 'clamp(13px, 1.3vw, 16px)',
-          color: 'var(--color-text)',
-          maxWidth: '600px',
-          lineHeight: 1.75,
-          marginTop: 'clamp(20px, 3vw, 36px)',
-        }}
-      >
-        Stop managing people. Stop paying agencies. One click and your AI team — Jeff, Emmy, and Atlas — handles email, SEO, and customer service around the clock.
-        <br />
-        <span style={{ color: 'var(--color-muted)' }}>Fully managed by Frank Media. Built for DTC brands doing $1M–$10M.</span>
-      </motion.p>
-
-      {/* Done-for-you callout */}
+      {/* Zero salaries tag */}
       <motion.div
-        initial={{ opacity: 0, y: 20 }}
+        initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, ease: 'easeOut', delay: 0.7 }}
-        style={{
-          display: 'inline-flex',
-          alignItems: 'center',
-          gap: '10px',
-          marginTop: '20px',
-          padding: '10px 16px',
-          border: '1px solid #1F3330',
-          backgroundColor: 'var(--color-surface)',
-          borderRadius: '2px',
-          alignSelf: 'flex-start',
-        }}
+        transition={{ duration: 0.6, ease: 'easeOut', delay: 0.38 }}
+        style={{ marginTop: '16px' }}
       >
-        <div className="pulse-dot" style={{ width: '6px', height: '6px', borderRadius: '50%', backgroundColor: 'var(--color-accent)', flexShrink: 0 }} />
-        <span style={{ fontFamily: 'var(--font-dm-mono)', fontSize: '11px', color: 'var(--color-accent)', letterSpacing: '0.1em' }}>
-          WE RUN EVERYTHING. YOU DO NOTHING.
+        <span style={{
+          fontFamily: 'var(--font-display)',
+          fontWeight: 600,
+          fontSize: 'clamp(18px, 2.5vw, 28px)',
+          color: 'var(--color-muted)',
+          letterSpacing: '-0.02em',
+        }}>
+          Zero salaries.
         </span>
       </motion.div>
 
+      {/* Subline */}
+      <motion.p
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, ease: 'easeOut', delay: 0.5 }}
+        style={{
+          fontFamily: 'var(--font-display)',
+          fontWeight: 400,
+          fontSize: 'clamp(16px, 1.6vw, 20px)',
+          color: 'var(--color-muted)',
+          maxWidth: '540px',
+          lineHeight: 1.6,
+          marginTop: 'clamp(16px, 2.5vw, 28px)',
+          letterSpacing: '-0.01em',
+        }}
+      >
+        AI Agents that work 24/7. No sick days. No holidays. No slack messages. Fully managed by Frank Media. You do nothing.
+      </motion.p>
+
       {/* CTA row */}
       <motion.div
-        initial={{ opacity: 0, y: 30 }}
+        initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, ease: 'easeOut', delay: 0.85 }}
-        style={{ marginTop: 'clamp(24px, 3vw, 36px)', display: 'flex', alignItems: 'center', flexWrap: 'wrap', gap: '24px' }}
+        transition={{ duration: 0.6, ease: 'easeOut', delay: 0.56 }}
+        style={{ marginTop: 'clamp(28px, 4vw, 44px)', display: 'flex', alignItems: 'center', flexWrap: 'wrap', gap: '12px', justifyContent: 'center' }}
       >
         <a
           href="#agents"
-          aria-label="Meet the agents"
           style={{
-            fontFamily: 'var(--font-dm-mono)',
-            fontSize: '12px',
-            letterSpacing: '0.1em',
-            color: 'var(--color-accent)',
-            border: '1px solid var(--color-accent)',
-            background: 'transparent',
-            padding: '14px 28px',
+            fontFamily: 'var(--font-display)',
+            fontWeight: 500,
+            fontSize: '16px',
+            letterSpacing: '-0.01em',
+            color: '#fff',
+            backgroundColor: 'var(--color-accent)',
+            border: 'none',
+            padding: '16px 32px',
+            borderRadius: '980px',
             cursor: 'pointer',
             textDecoration: 'none',
-            transition: 'background 200ms, color 200ms',
+            transition: 'opacity 200ms',
             display: 'inline-block',
-            flexShrink: 0,
           }}
-          onMouseEnter={(e) => { e.currentTarget.style.background = 'var(--color-accent)'; e.currentTarget.style.color = '#000' }}
-          onMouseLeave={(e) => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.color = 'var(--color-accent)' }}
+          onMouseEnter={(e) => { e.currentTarget.style.opacity = '0.85' }}
+          onMouseLeave={(e) => { e.currentTarget.style.opacity = '1' }}
         >
-          MEET THE AGENTS →
+          Meet the Agents
         </a>
+        <a
+          href="#pricing"
+          style={{
+            fontFamily: 'var(--font-display)',
+            fontWeight: 500,
+            fontSize: '16px',
+            letterSpacing: '-0.01em',
+            color: 'var(--color-text)',
+            backgroundColor: 'rgba(0,0,0,0.06)',
+            border: 'none',
+            padding: '16px 32px',
+            borderRadius: '980px',
+            cursor: 'pointer',
+            textDecoration: 'none',
+            transition: 'background 200ms',
+            display: 'inline-block',
+          }}
+          onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = 'rgba(0,0,0,0.1)' }}
+          onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = 'rgba(0,0,0,0.06)' }}
+        >
+          Book Free Audit
+        </a>
+      </motion.div>
 
-        <div style={{ display: 'flex', alignItems: 'center', gap: '20px', flexWrap: 'wrap' }}>
-          {['Starts at $750/mo', 'Live in 7 days', 'Cancel anytime'].map((item, i) => (
-            <span key={i} style={{ fontFamily: 'var(--font-dm-mono)', fontSize: '11px', color: 'var(--color-muted)', letterSpacing: '0.08em', display: 'flex', alignItems: 'center', gap: '6px' }}>
-              <span style={{ color: 'var(--color-accent)' }}>→</span>{item}
-            </span>
-          ))}
-        </div>
+      {/* Social proof */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.6, delay: 0.72 }}
+        style={{ display: 'flex', alignItems: 'center', gap: '28px', flexWrap: 'wrap', justifyContent: 'center', marginTop: '24px' }}
+      >
+        {['Starts at $750/mo', 'Live in 7 days', 'Cancel anytime'].map((item, i) => (
+          <span key={i} style={{ fontFamily: 'var(--font-display)', fontSize: '12px', color: 'var(--color-muted)', letterSpacing: '0.02em' }}>
+            {item}
+          </span>
+        ))}
       </motion.div>
     </section>
   )

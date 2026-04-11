@@ -1,9 +1,9 @@
 import type { Metadata } from 'next'
-import { Space_Grotesk, DM_Mono } from 'next/font/google'
+import { Inter, DM_Mono } from 'next/font/google'
 import '../styles/globals.css'
 
-const spaceGrotesk = Space_Grotesk({
-  weight: ['400', '500', '600', '700'],
+const inter = Inter({
+  weight: ['400', '500', '600', '700', '800'],
   subsets: ['latin'],
   variable: '--font-display',
   display: 'swap',
@@ -44,7 +44,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={`${spaceGrotesk.variable} ${dmMono.variable}`}>
+    <html lang="en" className={`${inter.variable} ${dmMono.variable}`}>
       <body>{children}</body>
     </html>
   )

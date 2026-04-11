@@ -6,7 +6,7 @@ export default function Footer() {
       aria-label="Site footer"
       style={{
         backgroundColor: 'var(--color-bg)',
-        borderTop: '1px solid #1A2422',
+        borderTop: '1px solid #222222',
         padding: 'clamp(48px, 6vw, 80px) clamp(24px, 5vw, 80px) clamp(32px, 4vw, 48px)',
       }}
     >
@@ -24,7 +24,7 @@ export default function Footer() {
           <div>
             <div
               style={{
-                fontFamily: 'var(--font-dm-mono)',
+                fontFamily: 'var(--font-display)',
                 fontSize: '13px',
                 color: 'var(--color-accent)',
                 letterSpacing: '0.08em',
@@ -35,7 +35,7 @@ export default function Footer() {
             </div>
             <div
               style={{
-                fontFamily: 'var(--font-dm-mono)',
+                fontFamily: 'var(--font-display)',
                 fontSize: '11px',
                 color: 'var(--color-muted)',
                 letterSpacing: '0.05em',
@@ -49,7 +49,7 @@ export default function Footer() {
           <div>
             <div
               style={{
-                fontFamily: 'var(--font-dm-mono)',
+                fontFamily: 'var(--font-display)',
                 fontSize: '11px',
                 color: 'var(--color-muted)',
                 letterSpacing: '0.1em',
@@ -63,7 +63,7 @@ export default function Footer() {
               <div
                 key={item}
                 style={{
-                  fontFamily: 'var(--font-dm-mono)',
+                  fontFamily: 'var(--font-display)',
                   fontSize: '11px',
                   color: 'var(--color-text)',
                   letterSpacing: '0.05em',
@@ -80,7 +80,7 @@ export default function Footer() {
           <div>
             <div
               style={{
-                fontFamily: 'var(--font-dm-mono)',
+                fontFamily: 'var(--font-display)',
                 fontSize: '11px',
                 color: 'var(--color-muted)',
                 letterSpacing: '0.1em',
@@ -100,7 +100,7 @@ export default function Footer() {
                 href={item.href}
                 style={{
                   display: 'block',
-                  fontFamily: 'var(--font-dm-mono)',
+                  fontFamily: 'var(--font-display)',
                   fontSize: '11px',
                   color: 'var(--color-text)',
                   letterSpacing: '0.05em',
@@ -121,7 +121,7 @@ export default function Footer() {
           <div>
             <div
               style={{
-                fontFamily: 'var(--font-dm-mono)',
+                fontFamily: 'var(--font-display)',
                 fontSize: '11px',
                 color: 'var(--color-muted)',
                 letterSpacing: '0.1em',
@@ -135,7 +135,7 @@ export default function Footer() {
               <div
                 key={item}
                 style={{
-                  fontFamily: 'var(--font-dm-mono)',
+                  fontFamily: 'var(--font-display)',
                   fontSize: '11px',
                   color: 'var(--color-text)',
                   letterSpacing: '0.05em',
@@ -152,13 +152,13 @@ export default function Footer() {
         {/* Bottom bar */}
         <div
           style={{
-            borderTop: '1px solid #1A2422',
+            borderTop: '1px solid #222222',
             paddingTop: '24px',
           }}
         >
           <p
             style={{
-              fontFamily: 'var(--font-dm-mono)',
+              fontFamily: 'var(--font-display)',
               fontSize: '10px',
               color: 'var(--color-muted)',
               letterSpacing: '0.05em',

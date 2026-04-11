@@ -38,7 +38,7 @@ export default function ProofSection() {
       style={{
         backgroundColor: 'var(--color-bg)',
         padding: 'clamp(80px, 10vw, 120px) clamp(24px, 5vw, 80px)',
-        borderTop: '1px solid #1A2422',
+        borderTop: '1px solid #222222',
       }}
     >
       <div style={{ maxWidth: '1400px', margin: '0 auto' }}>
@@ -52,7 +52,7 @@ export default function ProofSection() {
         >
           <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '16px' }}>
             <div style={{ width: '24px', height: '1px', backgroundColor: 'var(--color-accent)' }} />
-            <span style={{ fontFamily: 'var(--font-dm-mono)', fontSize: '11px', color: 'var(--color-accent)', letterSpacing: '0.15em', textTransform: 'uppercase' }}>
+            <span style={{ fontFamily: 'var(--font-display)', fontSize: '11px', color: 'var(--color-accent)', letterSpacing: '0.15em', textTransform: 'uppercase' }}>
               Early Results
             </span>
           </div>
@@ -70,7 +70,7 @@ export default function ProofSection() {
           >
             WHAT HAPPENS IN 30–90 DAYS.
           </h2>
-          <p style={{ fontFamily: 'var(--font-dm-mono)', fontSize: '13px', color: 'var(--color-muted)', lineHeight: 1.7, maxWidth: '480px' }}>
+          <p style={{ fontFamily: 'var(--font-display)', fontSize: '13px', color: 'var(--color-muted)', lineHeight: 1.7, maxWidth: '480px' }}>
             Brands anonymized at client request. Revenue figures verified.
           </p>
         </motion.div>
@@ -86,7 +86,7 @@ export default function ProofSection() {
               transition={{ duration: 0.6, delay: i * 0.1 }}
               style={{
                 backgroundColor: 'var(--color-surface)',
-                border: '1px solid #1F3330',
+                border: '1px solid #222222',
                 padding: 'clamp(24px, 3.5vw, 36px)',
                 borderRadius: '2px',
                 display: 'flex',
@@ -96,16 +96,16 @@ export default function ProofSection() {
             >
               {/* Tag */}
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px' }}>
-                <span style={{ fontFamily: 'var(--font-dm-mono)', fontSize: '10px', color: 'var(--color-accent)', letterSpacing: '0.12em', textTransform: 'uppercase' }}>
+                <span style={{ fontFamily: 'var(--font-display)', fontSize: '10px', color: 'var(--color-accent)', letterSpacing: '0.12em', textTransform: 'uppercase' }}>
                   {r.tag}
                 </span>
-                <span style={{ fontFamily: 'var(--font-dm-mono)', fontSize: '10px', color: 'var(--color-muted)', letterSpacing: '0.08em' }}>
+                <span style={{ fontFamily: 'var(--font-display)', fontSize: '10px', color: 'var(--color-muted)', letterSpacing: '0.08em' }}>
                   {r.timeframe}
                 </span>
               </div>
 
               {/* Brand */}
-              <p style={{ fontFamily: 'var(--font-dm-mono)', fontSize: '11px', color: 'var(--color-muted)', letterSpacing: '0.06em', marginBottom: '20px' }}>
+              <p style={{ fontFamily: 'var(--font-display)', fontSize: '11px', color: 'var(--color-muted)', letterSpacing: '0.06em', marginBottom: '20px' }}>
                 {r.brand}
               </p>
 
@@ -113,15 +113,15 @@ export default function ProofSection() {
               <div style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(48px, 7vw, 72px)', color: 'var(--color-accent)', lineHeight: 1, letterSpacing: '0.02em', marginBottom: '8px' }}>
                 {r.result}
               </div>
-              <p style={{ fontFamily: 'var(--font-dm-mono)', fontSize: '11px', color: 'var(--color-muted)', letterSpacing: '0.06em', marginBottom: '24px' }}>
+              <p style={{ fontFamily: 'var(--font-display)', fontSize: '11px', color: 'var(--color-muted)', letterSpacing: '0.06em', marginBottom: '24px' }}>
                 {r.resultLabel}
               </p>
 
               {/* Divider */}
-              <div style={{ height: '1px', backgroundColor: '#1F3330', marginBottom: '20px' }} />
+              <div style={{ height: '1px', backgroundColor: 'rgba(0,0,0,0.08)', marginBottom: '20px' }} />
 
               {/* Detail */}
-              <p style={{ fontFamily: 'var(--font-dm-mono)', fontSize: '12px', color: 'var(--color-text)', lineHeight: 1.7, flex: 1 }}>
+              <p style={{ fontFamily: 'var(--font-display)', fontSize: '12px', color: 'var(--color-text)', lineHeight: 1.7, flex: 1 }}>
                 {r.detail}
               </p>
             </motion.div>

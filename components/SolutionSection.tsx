@@ -30,7 +30,7 @@ function AgentCard({
       whileHover={{ borderColor: 'var(--color-accent)' } as never}
       style={{
         backgroundColor: 'var(--color-surface)',
-        border: '1px solid #1F3330',
+        border: '1px solid #222222',
         padding: 'clamp(28px, 4vw, 40px)',
         borderRadius: '2px',
         transition: 'border-color 300ms',
@@ -43,19 +43,19 @@ function AgentCard({
     >
       {/* Top row */}
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '20px' }}>
-        <span style={{ fontFamily: 'var(--font-dm-mono)', fontSize: '11px', color: 'var(--color-accent)', letterSpacing: '0.1em' }}>
+        <span style={{ fontFamily: 'var(--font-display)', fontSize: '11px', color: 'var(--color-accent)', letterSpacing: '0.1em' }}>
           {number}
         </span>
         <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
           <div className="pulse-dot" style={{ width: '6px', height: '6px', borderRadius: '50%', backgroundColor: 'var(--color-accent)', flexShrink: 0 }} />
-          <span style={{ fontFamily: 'var(--font-dm-mono)', fontSize: '10px', color: 'var(--color-muted)', letterSpacing: '0.08em' }}>ACTIVE</span>
+          <span style={{ fontFamily: 'var(--font-display)', fontSize: '10px', color: 'var(--color-muted)', letterSpacing: '0.08em' }}>ACTIVE</span>
         </div>
       </div>
 
       {/* Fully managed badge */}
       <div style={{ marginBottom: '16px' }}>
         <span style={{
-          fontFamily: 'var(--font-dm-mono)',
+          fontFamily: 'var(--font-display)',
           fontSize: '9px',
           letterSpacing: '0.12em',
           color: '#000',
@@ -81,7 +81,7 @@ function AgentCard({
       </h3>
 
       {/* Body */}
-      <p style={{ fontFamily: 'var(--font-dm-mono)', fontSize: '13px', color: 'var(--color-muted)', lineHeight: 1.7, marginBottom: geoNote ? '12px' : '32px', flex: 1 }}>
+      <p style={{ fontFamily: 'var(--font-display)', fontSize: '13px', color: 'var(--color-muted)', lineHeight: 1.7, marginBottom: geoNote ? '12px' : '32px', flex: 1 }}>
         {body}
       </p>
 
@@ -94,7 +94,7 @@ function AgentCard({
           marginBottom: '32px',
           borderRadius: '2px',
         }}>
-          <p style={{ fontFamily: 'var(--font-dm-mono)', fontSize: '11px', color: 'var(--color-accent)', lineHeight: 1.65, margin: 0 }}>
+          <p style={{ fontFamily: 'var(--font-display)', fontSize: '11px', color: 'var(--color-accent)', lineHeight: 1.65, margin: 0 }}>
             <strong>What is GEO?</strong> Generative Engine Optimization — getting your brand cited when buyers search inside ChatGPT, Perplexity, and Google AI Overviews. The new search. Most brands aren&apos;t in it yet.
           </p>
         </div>
@@ -104,7 +104,7 @@ function AgentCard({
       <div style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(64px, 8vw, 96px)', color: 'var(--color-accent)', lineHeight: 1, letterSpacing: '0.02em' }}>
         {stat}
       </div>
-      <div style={{ fontFamily: 'var(--font-dm-mono)', fontSize: '11px', color: 'var(--color-muted)', lineHeight: 1.6, marginTop: '8px', maxWidth: '260px' }}>
+      <div style={{ fontFamily: 'var(--font-display)', fontSize: '11px', color: 'var(--color-muted)', lineHeight: 1.6, marginTop: '8px', maxWidth: '260px' }}>
         {statLabel}
       </div>
     </motion.div>
@@ -119,7 +119,7 @@ export default function SolutionSection() {
       style={{
         backgroundColor: 'var(--color-bg)',
         padding: 'clamp(80px, 10vw, 120px) clamp(24px, 5vw, 80px)',
-        borderTop: '1px solid #1A2422',
+        borderTop: '1px solid #222222',
       }}
     >
       <div style={{ maxWidth: '1400px', margin: '0 auto' }}>
@@ -145,10 +145,10 @@ export default function SolutionSection() {
           >
             MEET YOUR NEW MARKETING DEPARTMENT.
           </h2>
-          <p style={{ fontFamily: 'var(--font-dm-mono)', fontSize: '13px', color: 'var(--color-muted)', lineHeight: 1.7, marginBottom: '8px' }}>
+          <p style={{ fontFamily: 'var(--font-display)', fontSize: '13px', color: 'var(--color-muted)', lineHeight: 1.7, marginBottom: '8px' }}>
             Two AI agents. Fully managed. Results in 30 days.
           </p>
-          <p style={{ fontFamily: 'var(--font-dm-mono)', fontSize: '12px', color: 'var(--color-accent)', letterSpacing: '0.08em' }}>
+          <p style={{ fontFamily: 'var(--font-display)', fontSize: '12px', color: 'var(--color-accent)', letterSpacing: '0.08em' }}>
             We handle everything. You approve nothing.
           </p>
         </motion.div>
@@ -180,7 +180,7 @@ export default function SolutionSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={vp}
           transition={{ duration: 0.6, delay: 0.2 }}
-          style={{ fontFamily: 'var(--font-dm-mono)', fontSize: '12px', color: 'var(--color-muted)', textAlign: 'center', marginTop: 'clamp(24px, 4vw, 48px)' }}
+          style={{ fontFamily: 'var(--font-display)', fontSize: '12px', color: 'var(--color-muted)', textAlign: 'center', marginTop: 'clamp(24px, 4vw, 48px)' }}
         >
           Paid Social Agent and Analytics Agent in development — Growth plan clients get early access.
         </motion.p>

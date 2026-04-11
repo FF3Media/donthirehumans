@@ -31,7 +31,7 @@ export default function HowItWorks() {
       style={{
         backgroundColor: 'var(--color-bg)',
         padding: 'clamp(80px, 10vw, 120px) clamp(24px, 5vw, 80px)',
-        borderTop: '1px solid #1A2422',
+        borderTop: '1px solid #222222',
       }}
     >
       <div style={{ maxWidth: '1400px', margin: '0 auto' }}>
@@ -59,7 +59,7 @@ export default function HowItWorks() {
           </h2>
           <p
             style={{
-              fontFamily: 'var(--font-dm-mono)',
+              fontFamily: 'var(--font-display)',
               fontSize: '13px',
               color: 'var(--color-muted)',
               lineHeight: 1.7,
@@ -122,7 +122,7 @@ export default function HowItWorks() {
 
                 <div
                   style={{
-                    fontFamily: 'var(--font-dm-mono)',
+                    fontFamily: 'var(--font-display)',
                     fontSize: '11px',
                     color: 'var(--color-accent)',
                     letterSpacing: '0.1em',
@@ -149,7 +149,7 @@ export default function HowItWorks() {
 
                 <p
                   style={{
-                    fontFamily: 'var(--font-dm-mono)',
+                    fontFamily: 'var(--font-display)',
                     fontSize: '12px',
                     color: 'var(--color-muted)',
                     lineHeight: 1.7,

@@ -62,7 +62,7 @@ export default function ComparisonSection() {
       style={{
         backgroundColor: 'var(--color-surface)',
         padding: 'clamp(80px, 10vw, 120px) clamp(24px, 5vw, 80px)',
-        borderTop: '1px solid #1F3330',
+        borderTop: '1px solid #222222',
       }}
     >
       <div style={{ maxWidth: '1400px', margin: '0 auto' }}>
@@ -78,17 +78,17 @@ export default function ComparisonSection() {
             id="comparison-heading"
             style={{
               fontFamily: 'var(--font-display)',
-              fontSize: 'clamp(36px, 5vw, 72px)',
-              letterSpacing: '0.02em',
+              fontWeight: 700,
+              fontSize: 'clamp(36px, 5vw, 64px)',
+              letterSpacing: '-0.03em',
               color: 'var(--color-text)',
-              textTransform: 'uppercase',
-              lineHeight: 1,
+              lineHeight: 1.05,
               marginBottom: '12px',
             }}
           >
             WHY NOT JUST USE A $39/MO AI TOOL?
           </h2>
-          <p style={{ fontFamily: 'var(--font-dm-mono)', fontSize: '13px', color: 'var(--color-muted)', lineHeight: 1.7, maxWidth: '560px' }}>
+          <p style={{ fontFamily: 'var(--font-display)', fontSize: '13px', color: 'var(--color-muted)', lineHeight: 1.7, maxWidth: '560px' }}>
             Tools give you software and a tutorial. We give you done. The difference is who logs in.
           </p>
         </motion.div>
@@ -108,33 +108,33 @@ export default function ComparisonSection() {
                 <th style={{ padding: '0 0 20px', textAlign: 'left', width: '22%' }} />
                 <th style={{ padding: '0 16px 20px', textAlign: 'center', width: '26%' }}>
                   <div style={{
-                    fontFamily: 'var(--font-dm-mono)',
+                    fontFamily: 'var(--font-display)',
                     fontSize: '11px',
                     color: 'var(--color-muted)',
                     letterSpacing: '0.1em',
                     textTransform: 'uppercase',
                     padding: '10px 16px',
-                    border: '1px solid #1F3330',
+                    border: '1px solid #222222',
                   }}>
                     Traditional Agency
                   </div>
                 </th>
                 <th style={{ padding: '0 16px 20px', textAlign: 'center', width: '26%' }}>
                   <div style={{
-                    fontFamily: 'var(--font-dm-mono)',
+                    fontFamily: 'var(--font-display)',
                     fontSize: '11px',
                     color: 'var(--color-muted)',
                     letterSpacing: '0.1em',
                     textTransform: 'uppercase',
                     padding: '10px 16px',
-                    border: '1px solid #1F3330',
+                    border: '1px solid #222222',
                   }}>
                     DIY AI Tools
                   </div>
                 </th>
                 <th style={{ padding: '0 0 20px', textAlign: 'center', width: '26%' }}>
                   <div style={{
-                    fontFamily: 'var(--font-dm-mono)',
+                    fontFamily: 'var(--font-display)',
                     fontSize: '11px',
                     color: '#000',
                     letterSpacing: '0.1em',
@@ -155,31 +155,31 @@ export default function ComparisonSection() {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={vp}
                   transition={{ duration: 0.4, delay: 0.15 + i * 0.05 }}
-                  style={{ borderTop: '1px solid #1A2422' }}
+                  style={{ borderTop: '1px solid #222222' }}
                 >
                   {/* Row label */}
-                  <td style={{ padding: '16px 0', fontFamily: 'var(--font-dm-mono)', fontSize: '11px', color: 'var(--color-muted)', letterSpacing: '0.06em', textTransform: 'uppercase', verticalAlign: 'middle' }}>
+                  <td style={{ padding: '16px 0', fontFamily: 'var(--font-display)', fontSize: '11px', color: 'var(--color-muted)', letterSpacing: '0.06em', textTransform: 'uppercase', verticalAlign: 'middle' }}>
                     {row.label}
                   </td>
                   {/* Agency */}
-                  <td style={{ padding: '16px', textAlign: 'center', fontFamily: 'var(--font-dm-mono)', fontSize: '12px', color: 'var(--color-muted)', verticalAlign: 'middle' }}>
+                  <td style={{ padding: '16px', textAlign: 'center', fontFamily: 'var(--font-display)', fontSize: '12px', color: 'var(--color-muted)', verticalAlign: 'middle' }}>
                     {row.agency}
                   </td>
                   {/* DIY */}
-                  <td style={{ padding: '16px', textAlign: 'center', fontFamily: 'var(--font-dm-mono)', fontSize: '12px', color: 'var(--color-muted)', verticalAlign: 'middle' }}>
+                  <td style={{ padding: '16px', textAlign: 'center', fontFamily: 'var(--font-display)', fontSize: '12px', color: 'var(--color-muted)', verticalAlign: 'middle' }}>
                     {row.diy}
                   </td>
                   {/* Frank Media — highlighted */}
                   <td style={{
                     padding: '16px',
                     textAlign: 'center',
-                    fontFamily: 'var(--font-dm-mono)',
+                    fontFamily: 'var(--font-display)',
                     fontSize: '12px',
                     color: 'var(--color-accent)',
                     verticalAlign: 'middle',
-                    borderLeft: '1px solid rgba(0,229,204,0.2)',
-                    borderRight: '1px solid rgba(0,229,204,0.2)',
-                    backgroundColor: 'rgba(0,229,204,0.03)',
+                    borderLeft: '1px solid rgba(36,138,61,0.2)',
+                    borderRight: '1px solid rgba(36,138,61,0.2)',
+                    backgroundColor: 'rgba(36,138,61,0.04)',
                   }}>
                     {row.frank}
                   </td>
@@ -196,7 +196,7 @@ export default function ComparisonSection() {
           viewport={vp}
           transition={{ duration: 0.5, delay: 0.5 }}
           style={{
-            fontFamily: 'var(--font-dm-mono)',
+            fontFamily: 'var(--font-display)',
             fontSize: '11px',
             color: 'var(--color-muted)',
             marginTop: '24px',

@@ -52,8 +52,8 @@ export default function StatSection() {
         width: '100%',
         backgroundColor: 'var(--color-bg)',
         padding: 'clamp(80px, 12vw, 140px) clamp(24px, 5vw, 80px)',
-        borderTop: '1px solid #1A2422',
-        borderBottom: '1px solid #1A2422',
+        borderTop: '1px solid #222222',
+        borderBottom: '1px solid #222222',
       }}
     >
       <div style={{ maxWidth: '1400px', margin: '0 auto' }}>
@@ -64,7 +64,7 @@ export default function StatSection() {
           viewport={vp}
           transition={{ duration: 0.6 }}
           style={{
-            fontFamily: 'var(--font-dm-mono)',
+            fontFamily: 'var(--font-display)',
             fontSize: '11px',
             color: 'var(--color-muted)',
             letterSpacing: '0.2em',
@@ -80,9 +80,9 @@ export default function StatSection() {
         <div
           style={{
             fontFamily: 'var(--font-display)',
-            fontSize: 'clamp(80px, 16vw, 200px)',
-            lineHeight: 1,
-            letterSpacing: '0.02em',
+            fontSize: 'clamp(100px, 20vw, 260px)',
+            lineHeight: 0.9,
+            letterSpacing: '0.01em',
             color: 'var(--color-text)',
             textAlign: 'center',
           }}
@@ -100,7 +100,7 @@ export default function StatSection() {
           style={{
             maxWidth: '640px',
             margin: 'clamp(32px, 5vw, 56px) auto 0',
-            borderTop: '1px solid #1F3330',
+            borderTop: '1px solid #222222',
           }}
         >
           {breakdown.map((item, i) => (
@@ -115,13 +115,13 @@ export default function StatSection() {
                 justifyContent: 'space-between',
                 alignItems: 'center',
                 padding: '12px 0',
-                borderBottom: '1px solid #1A2422',
+                borderBottom: '1px solid #222222',
               }}
             >
-              <span style={{ fontFamily: 'var(--font-dm-mono)', fontSize: '12px', color: 'var(--color-muted)', letterSpacing: '0.04em' }}>
+              <span style={{ fontFamily: 'var(--font-display)', fontSize: '12px', color: 'var(--color-muted)', letterSpacing: '0.04em' }}>
                 {item.label}
               </span>
-              <span style={{ fontFamily: 'var(--font-dm-mono)', fontSize: '12px', color: 'var(--color-text)', letterSpacing: '0.06em', flexShrink: 0, marginLeft: '24px' }}>
+              <span style={{ fontFamily: 'var(--font-display)', fontSize: '12px', color: 'var(--color-text)', letterSpacing: '0.06em', flexShrink: 0, marginLeft: '24px' }}>
                 ${item.cost.toLocaleString()}/mo
               </span>
             </motion.div>
@@ -129,10 +129,10 @@ export default function StatSection() {
 
           {/* Total row */}
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '16px 0 0' }}>
-            <span style={{ fontFamily: 'var(--font-dm-mono)', fontSize: '12px', color: 'var(--color-accent)', letterSpacing: '0.1em', textTransform: 'uppercase' }}>
+            <span style={{ fontFamily: 'var(--font-display)', fontSize: '12px', color: 'var(--color-accent)', letterSpacing: '0.1em', textTransform: 'uppercase' }}>
               Total
             </span>
-            <span style={{ fontFamily: 'var(--font-display)', fontSize: '28px', color: 'var(--color-accent)', letterSpacing: '0.04em' }}>
+            <span style={{ fontFamily: 'var(--font-display)', fontSize: '36px', color: 'var(--color-accent)', letterSpacing: '0.04em' }}>
               $47,000/mo
             </span>
           </div>
@@ -146,10 +146,10 @@ export default function StatSection() {
           transition={{ duration: 0.6, delay: 0.8 }}
           style={{ textAlign: 'center', marginTop: 'clamp(32px, 5vw, 56px)' }}
         >
-          <p style={{ fontFamily: 'var(--font-dm-mono)', fontSize: '13px', color: 'var(--color-accent)', letterSpacing: '0.05em' }}>
+          <p style={{ fontFamily: 'var(--font-display)', fontSize: '13px', color: 'var(--color-accent)', letterSpacing: '0.05em' }}>
             Our agents start at $750/mo.
           </p>
-          <p style={{ fontFamily: 'var(--font-dm-mono)', fontSize: '11px', color: 'var(--color-muted)', marginTop: '10px', letterSpacing: '0.05em' }}>
+          <p style={{ fontFamily: 'var(--font-display)', fontSize: '11px', color: 'var(--color-muted)', marginTop: '10px', letterSpacing: '0.05em' }}>
             No retainer. No headcount. No bullshit.
           </p>
         </motion.div>

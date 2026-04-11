@@ -25,7 +25,7 @@ export default function FinalCTA() {
         justifyContent: 'center',
         padding: 'clamp(80px, 10vw, 120px) clamp(24px, 5vw, 80px)',
         textAlign: 'center',
-        borderTop: '1px solid #1A2422',
+        borderTop: '1px solid #222222',
       }}
     >
       <motion.div
@@ -39,11 +39,11 @@ export default function FinalCTA() {
           id="final-cta-heading"
           style={{
             fontFamily: 'var(--font-display)',
-            fontSize: 'clamp(64px, 10vw, 140px)',
-            letterSpacing: '0.02em',
+            fontWeight: 700,
+            fontSize: 'clamp(48px, 8vw, 112px)',
+            letterSpacing: '-0.03em',
             color: 'var(--color-text)',
-            textTransform: 'uppercase',
-            lineHeight: 0.95,
+            lineHeight: 1.0,
             margin: 0,
           }}
         >
@@ -54,7 +54,7 @@ export default function FinalCTA() {
 
         <p
           style={{
-            fontFamily: 'var(--font-dm-mono)',
+            fontFamily: 'var(--font-display)',
             fontSize: '14px',
             color: 'var(--color-muted)',
             maxWidth: '480px',
@@ -75,8 +75,8 @@ export default function FinalCTA() {
               transition={{ duration: 0.4, delay: 0.2 + i * 0.08 }}
               style={{ display: 'flex', gap: '12px', alignItems: 'flex-start' }}
             >
-              <span style={{ color: 'var(--color-accent)', fontFamily: 'var(--font-dm-mono)', fontSize: '12px', flexShrink: 0, marginTop: '2px' }}>→</span>
-              <span style={{ fontFamily: 'var(--font-dm-mono)', fontSize: '12px', color: 'var(--color-text)', lineHeight: 1.65 }}>{item}</span>
+              <span style={{ color: 'var(--color-accent)', fontFamily: 'var(--font-display)', fontSize: '12px', flexShrink: 0, marginTop: '2px' }}>→</span>
+              <span style={{ fontFamily: 'var(--font-display)', fontSize: '12px', color: 'var(--color-text)', lineHeight: 1.65 }}>{item}</span>
             </motion.div>
           ))}
         </div>
@@ -85,18 +85,24 @@ export default function FinalCTA() {
           href="mailto:audit@frankmedia.ai"
           aria-label="Book a free 15-minute audit"
           style={{
-            fontFamily: 'var(--font-dm-mono)',
+            fontFamily: 'var(--font-display)',
             fontSize: '13px',
             letterSpacing: '0.1em',
-            color: hovered ? '#000' : 'var(--color-accent)',
-            border: '1px solid var(--color-accent)',
-            background: hovered ? 'var(--color-accent)' : 'transparent',
+            color: '#000',
+            border: 'none',
+            background: 'var(--color-accent)',
             padding: '16px 40px',
+            borderRadius: '980px',
             cursor: 'pointer',
             textDecoration: 'none',
-            transition: 'background 200ms, color 200ms',
+            transition: 'opacity 200ms',
             display: 'inline-block',
             marginTop: '8px',
+            opacity: hovered ? 0.85 : 1,
+            fontFamily: 'var(--font-display)',
+            fontWeight: 500,
+            fontSize: '16px',
+            letterSpacing: '-0.01em',
           }}
           onMouseEnter={() => setHovered(true)}
           onMouseLeave={() => setHovered(false)}
@@ -106,7 +112,7 @@ export default function FinalCTA() {
 
         <p
           style={{
-            fontFamily: 'var(--font-dm-mono)',
+            fontFamily: 'var(--font-display)',
             fontSize: '11px',
             color: 'var(--color-muted)',
             letterSpacing: '0.05em',

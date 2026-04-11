@@ -3,11 +3,11 @@
 @tailwind utilities;
 
 :root {
-  --color-bg: #080C0C;
-  --color-text: #E8EDEC;
-  --color-accent: #00E5CC;
-  --color-surface: #1A2422;
-  --color-muted: #6B7E7C;
+  --color-bg: #FFFFFF;
+  --color-text: #1D1D1F;
+  --color-accent: #1A7A35;
+  --color-surface: #F5F5F7;
+  --color-muted: #6E6E73;
 }
 
 * {
@@ -74,7 +74,7 @@ button:focus-visible {
 /* Selection */
 ::selection {
   background: var(--color-accent);
-  color: #000;
+  color: #fff;
 }
 
 /* How It Works connector line — hidden on mobile */
