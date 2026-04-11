@@ -46,7 +46,7 @@ export default function Hero() {
 
       {/* Headline — clear, immediate, descriptive */}
       <h1 style={{ margin: 0 }}>
-        {['PUSH A BUTTON.', 'RUN YOUR BUSINESS', 'WITH AI AGENTS.'].map((line, i) => (
+        {['PUSH A BUTTON', 'AND RUN YOUR BUSINESS', 'USING AI AGENTS.'].map((line, i) => (
           <motion.div
             key={line}
             initial={{ opacity: 0, y: 50 }}
