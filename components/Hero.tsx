@@ -46,7 +46,7 @@ export default function Hero() {
 
       {/* Headline — clear, immediate, descriptive */}
       <h1 style={{ margin: 0 }}>
-        {['HIRE AI AGENTS.', "NOT HUMANS."].map((line, i) => (
+        {['PUSH A BUTTON.', 'RUN YOUR BUSINESS', 'WITH AI AGENTS.'].map((line, i) => (
           <motion.div
             key={line}
             initial={{ opacity: 0, y: 50 }}
@@ -56,10 +56,10 @@ export default function Hero() {
               display: 'block',
               fontFamily: 'var(--font-display)',
               fontWeight: 700,
-              fontSize: 'clamp(52px, 9vw, 130px)',
+              fontSize: 'clamp(40px, 7vw, 100px)',
               lineHeight: 1.0,
               letterSpacing: '-0.02em',
-              color: i === 1 ? 'var(--color-accent)' : 'var(--color-text)',
+              color: i === 2 ? 'var(--color-accent)' : 'var(--color-text)',
               textTransform: 'uppercase',
             }}
           >
@@ -82,9 +82,9 @@ export default function Hero() {
           marginTop: 'clamp(20px, 3vw, 36px)',
         }}
       >
-        We build and run AI agents that handle your email marketing, SEO, and customer service — 24/7, fully managed, no salaries, no agencies.
+        Stop managing people. Stop paying agencies. One click and your AI team — Jeff, Emmy, and Atlas — handles email, SEO, and customer service around the clock.
         <br />
-        <span style={{ color: 'var(--color-muted)' }}>Meet Jeff, Emmy, and Atlas. Your new team.</span>
+        <span style={{ color: 'var(--color-muted)' }}>Fully managed by Frank Media. Built for DTC brands doing $1M–$10M.</span>
       </motion.p>
 
       {/* Done-for-you callout */}
