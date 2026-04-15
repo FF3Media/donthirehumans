@@ -86,9 +86,10 @@ export default function FinalCTA() {
           aria-label="Book a free 15-minute audit"
           style={{
             fontFamily: 'var(--font-display)',
-            fontSize: '13px',
-            letterSpacing: '0.1em',
-            color: '#000',
+            fontWeight: 500,
+            fontSize: '16px',
+            letterSpacing: '-0.01em',
+            color: '#fff',
             border: 'none',
             background: 'var(--color-accent)',
             padding: '16px 40px',
@@ -99,10 +100,6 @@ export default function FinalCTA() {
             display: 'inline-block',
             marginTop: '8px',
             opacity: hovered ? 0.85 : 1,
-            fontFamily: 'var(--font-display)',
-            fontWeight: 500,
-            fontSize: '16px',
-            letterSpacing: '-0.01em',
           }}
           onMouseEnter={() => setHovered(true)}
           onMouseLeave={() => setHovered(false)}
