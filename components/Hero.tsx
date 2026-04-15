@@ -31,28 +31,6 @@ export default function Hero() {
         pointerEvents: 'none',
       }} />
 
-      {/* Status pill */}
-      <motion.div
-        initial={{ opacity: 0, y: -10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.1 }}
-        style={{
-          display: 'inline-flex',
-          alignItems: 'center',
-          gap: '8px',
-          padding: '8px 18px',
-          borderRadius: '980px',
-          border: '1px solid rgba(36,138,61,0.25)',
-          backgroundColor: 'rgba(36,138,61,0.06)',
-          marginBottom: 'clamp(24px, 4vw, 40px)',
-        }}
-      >
-        <div className="pulse-dot" style={{ width: '7px', height: '7px', borderRadius: '50%', backgroundColor: 'var(--color-accent)', flexShrink: 0 }} />
-        <span style={{ fontFamily: 'var(--font-display)', fontWeight: 500, fontSize: '14px', color: 'var(--color-accent)', letterSpacing: '-0.01em' }}>
-          AI Agents for DTC Brands
-        </span>
-      </motion.div>
-
       {/* Headline */}
       <h1 style={{ margin: 0, maxWidth: '960px' }}>
         {['AI Agents that power', 'your business.'].map((line, i) => (
@@ -143,7 +121,7 @@ export default function Hero() {
           Meet the Agents
         </a>
         <a
-          href="#pricing"
+          href="/contact"
           style={{
             fontFamily: 'var(--font-display)',
             fontWeight: 500,

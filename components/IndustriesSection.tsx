@@ -96,12 +96,25 @@ export default function IndustriesSection() {
     <section
       aria-label="Industries"
       style={{
-        backgroundColor: '#fff',
+        backgroundColor: '#0A0A0A',
         padding: 'clamp(80px, 10vw, 120px) clamp(24px, 5vw, 80px)',
-        borderTop: '1px solid rgba(0,0,0,0.06)',
+        position: 'relative',
+        overflow: 'hidden',
       }}
     >
-      <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
+      {/* Subtle glow */}
+      <div style={{
+        position: 'absolute',
+        top: '30%',
+        left: '50%',
+        transform: 'translate(-50%, -50%)',
+        width: '800px',
+        height: '500px',
+        background: 'radial-gradient(ellipse, rgba(36,138,61,0.1) 0%, transparent 70%)',
+        pointerEvents: 'none',
+      }} />
+
+      <div style={{ maxWidth: '1200px', margin: '0 auto', position: 'relative' }}>
 
         {/* Section label */}
         <motion.p
@@ -113,7 +126,7 @@ export default function IndustriesSection() {
             fontFamily: 'var(--font-display)',
             fontWeight: 500,
             fontSize: '12px',
-            color: 'var(--color-muted)',
+            color: 'var(--color-accent)',
             letterSpacing: '0.1em',
             textTransform: 'uppercase',
             textAlign: 'center',
@@ -148,9 +161,9 @@ export default function IndustriesSection() {
                 letterSpacing: '-0.01em',
                 padding: '10px 22px',
                 borderRadius: '980px',
-                border: active === ind.id ? 'none' : '1px solid rgba(0,0,0,0.12)',
+                border: active === ind.id ? 'none' : '1px solid rgba(255,255,255,0.15)',
                 backgroundColor: active === ind.id ? 'var(--color-accent)' : 'transparent',
-                color: active === ind.id ? '#fff' : 'var(--color-muted)',
+                color: active === ind.id ? '#fff' : 'rgba(255,255,255,0.5)',
                 cursor: 'pointer',
                 transition: 'all 200ms ease',
               }}
@@ -177,7 +190,7 @@ export default function IndustriesSection() {
                 fontSize: 'clamp(32px, 5vw, 64px)',
                 letterSpacing: '-0.04em',
                 lineHeight: 1.05,
-                color: 'var(--color-text)',
+                color: '#fff',
                 marginBottom: '16px',
               }}>
                 {current.heading}{' '}
@@ -187,7 +200,7 @@ export default function IndustriesSection() {
                 fontFamily: 'var(--font-display)',
                 fontWeight: 400,
                 fontSize: 'clamp(15px, 1.5vw, 18px)',
-                color: 'var(--color-muted)',
+                color: 'rgba(255,255,255,0.5)',
                 lineHeight: 1.6,
                 letterSpacing: '-0.01em',
                 maxWidth: '520px',
@@ -210,9 +223,9 @@ export default function IndustriesSection() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.4, delay: i * 0.1 }}
                   style={{
-                    backgroundColor: 'var(--color-surface)',
+                    backgroundColor: 'rgba(255,255,255,0.05)',
                     borderRadius: '24px',
-                    border: '1px solid rgba(0,0,0,0.07)',
+                    border: '1px solid rgba(255,255,255,0.08)',
                     padding: 'clamp(24px, 3vw, 36px)',
                     display: 'flex',
                     flexDirection: 'column',
@@ -244,7 +257,7 @@ export default function IndustriesSection() {
                     fontFamily: 'var(--font-display)',
                     fontWeight: 700,
                     fontSize: 'clamp(22px, 2.5vw, 30px)',
-                    color: 'var(--color-text)',
+                    color: '#fff',
                     letterSpacing: '-0.02em',
                     margin: '0 0 6px',
                   }}>
@@ -275,7 +288,7 @@ export default function IndustriesSection() {
                     fontFamily: 'var(--font-display)',
                     fontWeight: 400,
                     fontSize: 'clamp(13px, 1.2vw, 15px)',
-                    color: 'var(--color-muted)',
+                    color: 'rgba(255,255,255,0.45)',
                     lineHeight: 1.65,
                     letterSpacing: '-0.01em',
                     flex: 1,

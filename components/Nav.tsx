@@ -50,7 +50,7 @@ export default function Nav() {
 
         {/* CTA — pill */}
         <a
-          href="#pricing"
+          href="/contact"
           aria-label="Book a free audit"
           style={{
             fontFamily: 'var(--font-display)',

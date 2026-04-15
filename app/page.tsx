@@ -21,8 +21,8 @@ export default function Home() {
       <Nav />
       <Hero />
       <BrandsSection />
-      <ReviewsSection />
       <IndustriesSection />
+      <ReviewsSection />
       <AgentsSection />
       <UrgencySection />
       <ComparisonSection />
