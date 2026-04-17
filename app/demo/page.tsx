@@ -69,7 +69,8 @@ function OptionC() {
   useEffect(() => {
     const canvas = canvasRef.current
     if (!canvas) return
-    const ctx = canvas.getContext('2d')!
+    const ctx = canvas.getContext('2d')
+    if (!ctx) return
     canvas.width = canvas.offsetWidth
     canvas.height = canvas.offsetHeight
 
@@ -81,28 +82,30 @@ function OptionC() {
       r: Math.random() * 2.5 + 1,
     }))
 
+    const c = canvas
+    const cx = ctx
     let frame: number
     function draw() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height)
+      cx.clearRect(0, 0, c.width, c.height)
       for (let i = 0; i < particles.length; i++) {
         const p = particles[i]
         p.x += p.vx; p.y += p.vy
-        if (p.x < 0 || p.x > canvas.width) p.vx *= -1
-        if (p.y < 0 || p.y > canvas.height) p.vy *= -1
-        ctx.beginPath()
-        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2)
-        ctx.fillStyle = 'rgba(36,138,61,0.5)'
-        ctx.fill()
+        if (p.x < 0 || p.x > c.width) p.vx *= -1
+        if (p.y < 0 || p.y > c.height) p.vy *= -1
+        cx.beginPath()
+        cx.arc(p.x, p.y, p.r, 0, Math.PI * 2)
+        cx.fillStyle = 'rgba(36,138,61,0.5)'
+        cx.fill()
         for (let j = i + 1; j < particles.length; j++) {
           const q = particles[j]
           const d = Math.hypot(p.x - q.x, p.y - q.y)
           if (d < 100) {
-            ctx.beginPath()
-            ctx.moveTo(p.x, p.y)
-            ctx.lineTo(q.x, q.y)
-            ctx.strokeStyle = `rgba(36,138,61,${0.15 * (1 - d / 100)})`
-            ctx.lineWidth = 0.8
-            ctx.stroke()
+            cx.beginPath()
+            cx.moveTo(p.x, p.y)
+            cx.lineTo(q.x, q.y)
+            cx.strokeStyle = `rgba(36,138,61,${0.15 * (1 - d / 100)})`
+            cx.lineWidth = 0.8
+            cx.stroke()
           }
         }
       }
