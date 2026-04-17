@@ -20,10 +20,10 @@ export default function Home() {
     <main>
       <Nav />
       <Hero />
-      <BrandsSection />
       <IndustriesSection />
       <ReviewsSection />
       <AgentsSection />
+      <BrandsSection />
       <UrgencySection />
       <ComparisonSection />
       <StatSection />
