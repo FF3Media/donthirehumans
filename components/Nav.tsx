@@ -36,17 +36,19 @@ export default function Nav() {
         }}
       >
         {/* Logo */}
-        <div
+        <a
+          href="/"
           style={{
             fontFamily: 'var(--font-display)',
             fontSize: '20px',
             color: 'var(--color-text)',
             letterSpacing: '-0.02em',
             fontWeight: 700,
+            textDecoration: 'none',
           }}
         >
           Frank Media
-        </div>
+        </a>
 
         {/* CTA — pill */}
         <a

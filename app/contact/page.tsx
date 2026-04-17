@@ -63,14 +63,14 @@ export default function ContactPage() {
                   lineHeight: 1.6,
                   letterSpacing: '-0.01em',
                 }}>
-                  Fill this in and we&apos;ll come back within 24 hours with a tailored breakdown of where AI agents can drive the most impact for your brand.
+                  Fill this in and we&apos;ll be in touch right away with a tailored breakdown of where AI agents can drive the most impact for your brand.
                 </p>
               </div>
 
               <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
 
                 {[
-                  { name: 'name', label: 'Your name', type: 'text', placeholder: 'Frank Fitzgerald' },
+                  { name: 'name', label: 'Your name', type: 'text', placeholder: 'Your name' },
                   { name: 'email', label: 'Email address', type: 'email', placeholder: 'frank@yourbrand.com' },
                   { name: 'brand', label: 'Brand name', type: 'text', placeholder: 'Your Brand' },
                 ].map(field => (
@@ -207,15 +207,6 @@ export default function ContactPage() {
                   Get my free audit
                 </button>
 
-                <p style={{
-                  fontFamily: 'var(--font-display)',
-                  fontSize: '13px',
-                  color: 'var(--color-muted)',
-                  textAlign: 'center',
-                  letterSpacing: '-0.01em',
-                }}>
-                  No commitment. We&apos;ll respond within 24 hours.
-                </p>
               </form>
             </>
           ) : (
