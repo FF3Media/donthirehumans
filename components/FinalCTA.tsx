@@ -82,7 +82,7 @@ export default function FinalCTA() {
         </div>
 
         <a
-          href="mailto:audit@frankmedia.ai"
+          href="/contact"
           aria-label="Book a free 15-minute audit"
           style={{
             fontFamily: 'var(--font-display)',

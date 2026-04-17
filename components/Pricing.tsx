@@ -13,8 +13,10 @@ function CTAButton({
   const [hovered, setHovered] = useState(false)
 
   return (
-    <button
+    <a
+      href="/contact"
       style={{
+        display: 'block',
         width: '100%',
         fontFamily: 'var(--font-display)',
         fontSize: '12px',
@@ -26,12 +28,15 @@ function CTAButton({
         cursor: 'pointer',
         transition: 'background 200ms, color 200ms',
         borderRadius: '2px',
+        textDecoration: 'none',
+        textAlign: 'center',
+        boxSizing: 'border-box',
       }}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
       {children}
-    </button>
+    </a>
   )
 }
 

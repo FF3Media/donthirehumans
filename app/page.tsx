@@ -20,13 +20,13 @@ export default function Home() {
     <main>
       <Nav />
       <Hero />
-      <IndustriesSection />
       <ReviewsSection />
+      <UrgencySection />
+      <IndustriesSection />
       <AgentsSection />
       <BrandsSection />
-      <UrgencySection />
-      <ComparisonSection />
       <StatSection />
+      <ComparisonSection />
       <ProofSection />
       <HowItWorks />
       <Pricing />

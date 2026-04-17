@@ -136,6 +136,45 @@ export default function ReviewsSection() {
             </motion.div>
           ))}
         </div>
+
+        {/* Mid-page CTA */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+          style={{ textAlign: 'center', marginTop: 'clamp(40px, 5vw, 64px)' }}
+        >
+          <a
+            href="/contact"
+            style={{
+              display: 'inline-block',
+              fontFamily: 'var(--font-display)',
+              fontWeight: 500,
+              fontSize: '16px',
+              letterSpacing: '-0.01em',
+              color: '#fff',
+              backgroundColor: 'var(--color-accent)',
+              padding: '16px 36px',
+              borderRadius: '980px',
+              textDecoration: 'none',
+              transition: 'opacity 200ms',
+            }}
+            onMouseEnter={(e) => { e.currentTarget.style.opacity = '0.85' }}
+            onMouseLeave={(e) => { e.currentTarget.style.opacity = '1' }}
+          >
+            Get your free audit →
+          </a>
+          <p style={{
+            fontFamily: 'var(--font-display)',
+            fontSize: '12px',
+            color: 'var(--color-muted)',
+            marginTop: '12px',
+            letterSpacing: '-0.01em',
+          }}>
+            Starts at $750/mo. Live in 7 days. Cancel anytime.
+          </p>
+        </motion.div>
       </div>
     </section>
   )

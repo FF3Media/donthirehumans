@@ -2,13 +2,47 @@
 
 import { motion } from 'framer-motion'
 
+const agentColors = ['#E8F5E9','#E3F2FD','#FFF3E0','#FCE4EC','#F3E5F5','#E0F7FA','#FFF8E1','#F1F8E9','#EDE7F6']
+const agentLabels = ['Frank','Musa','Emmy','Clark','Barry','Bruce','Vera','Hannah','Eve']
+
+const positions = [
+  { x: '4%',  y: '15%' }, { x: '88%', y: '10%' }, { x: '15%', y: '62%' },
+  { x: '79%', y: '56%' }, { x: '46%', y: '4%'  }, { x: '30%', y: '74%' },
+  { x: '61%', y: '71%' }, { x: '2%',  y: '44%' }, { x: '91%', y: '38%' },
+]
+
+function FloatingAgent({ x, y, delay, color, label }: { x: string; y: string; delay: number; color: string; label: string }) {
+  return (
+    <motion.div
+      animate={{ y: ['0px', '-14px', '0px'] }}
+      transition={{ duration: 3.5 + delay * 0.4, repeat: Infinity, ease: 'easeInOut', delay }}
+      style={{ position: 'absolute', left: x, top: y, textAlign: 'center', zIndex: 1 }}
+    >
+      <div style={{
+        width: '52px',
+        height: '52px',
+        borderRadius: '14px',
+        backgroundColor: color,
+        border: '1px solid rgba(0,0,0,0.08)',
+        marginBottom: '4px',
+      }} />
+      <span style={{
+        fontFamily: 'var(--font-display)',
+        fontSize: '10px',
+        color: 'var(--color-muted)',
+        fontWeight: 500,
+      }}>{label}</span>
+    </motion.div>
+  )
+}
+
 export default function Hero() {
   return (
     <section
       aria-label="Hero"
       style={{
         minHeight: '100vh',
-        backgroundColor: 'var(--color-bg)',
+        backgroundColor: 'var(--color-surface)',
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
@@ -19,20 +53,20 @@ export default function Hero() {
         overflow: 'hidden',
       }}
     >
-      {/* Subtle glow — light mode */}
-      <div style={{
-        position: 'absolute',
-        top: '40%',
-        left: '50%',
-        transform: 'translate(-50%, -50%)',
-        width: '700px',
-        height: '700px',
-        background: 'radial-gradient(circle, rgba(36,138,61,0.07) 0%, transparent 70%)',
-        pointerEvents: 'none',
-      }} />
+      {/* Floating agents */}
+      {positions.map((p, i) => (
+        <FloatingAgent
+          key={i}
+          x={p.x}
+          y={p.y}
+          delay={i * 0.3}
+          color={agentColors[i]}
+          label={agentLabels[i]}
+        />
+      ))}
 
       {/* Headline */}
-      <h1 style={{ margin: 0, maxWidth: '960px' }}>
+      <h1 style={{ margin: 0, maxWidth: '960px', position: 'relative', zIndex: 2 }}>
         {['AI Agents that power', 'your business.'].map((line, i) => (
           <motion.div
             key={line}
@@ -59,7 +93,7 @@ export default function Hero() {
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, ease: 'easeOut', delay: 0.38 }}
-        style={{ marginTop: '16px' }}
+        style={{ marginTop: '16px', position: 'relative', zIndex: 2 }}
       >
         <span style={{
           fontFamily: 'var(--font-display)',
@@ -86,6 +120,8 @@ export default function Hero() {
           lineHeight: 1.6,
           marginTop: 'clamp(16px, 2.5vw, 28px)',
           letterSpacing: '-0.01em',
+          position: 'relative',
+          zIndex: 2,
         }}
       >
         AI Agents that work 24/7. No sick days. No holidays. No slack messages. Fully managed by Frank Media. You do nothing.
@@ -96,10 +132,19 @@ export default function Hero() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, ease: 'easeOut', delay: 0.56 }}
-        style={{ marginTop: 'clamp(28px, 4vw, 44px)', display: 'flex', alignItems: 'center', flexWrap: 'wrap', gap: '12px', justifyContent: 'center' }}
+        style={{
+          marginTop: 'clamp(28px, 4vw, 44px)',
+          display: 'flex',
+          alignItems: 'center',
+          flexWrap: 'wrap',
+          gap: '12px',
+          justifyContent: 'center',
+          position: 'relative',
+          zIndex: 2,
+        }}
       >
         <a
-          href="#agents"
+          href="/contact"
           style={{
             fontFamily: 'var(--font-display)',
             fontWeight: 500,
@@ -118,10 +163,10 @@ export default function Hero() {
           onMouseEnter={(e) => { e.currentTarget.style.opacity = '0.85' }}
           onMouseLeave={(e) => { e.currentTarget.style.opacity = '1' }}
         >
-          Meet the Agents
+          Book Free Audit
         </a>
         <a
-          href="/contact"
+          href="#agents"
           style={{
             fontFamily: 'var(--font-display)',
             fontWeight: 500,
@@ -140,7 +185,7 @@ export default function Hero() {
           onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = 'rgba(0,0,0,0.1)' }}
           onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = 'rgba(0,0,0,0.06)' }}
         >
-          Book Free Audit
+          Meet the Agents
         </a>
       </motion.div>
 
@@ -149,7 +194,16 @@ export default function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.6, delay: 0.72 }}
-        style={{ display: 'flex', alignItems: 'center', gap: '28px', flexWrap: 'wrap', justifyContent: 'center', marginTop: '24px' }}
+        style={{
+          display: 'flex',
+          alignItems: 'center',
+          gap: '28px',
+          flexWrap: 'wrap',
+          justifyContent: 'center',
+          marginTop: '24px',
+          position: 'relative',
+          zIndex: 2,
+        }}
       >
         {['Starts at $750/mo', 'Live in 7 days', 'Cancel anytime'].map((item, i) => (
           <span key={i} style={{ fontFamily: 'var(--font-display)', fontSize: '12px', color: 'var(--color-muted)', letterSpacing: '0.02em' }}>

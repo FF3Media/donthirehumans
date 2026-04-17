@@ -60,7 +60,7 @@ export default function BrandsSection() {
                 fontFamily: 'var(--font-display)',
                 fontWeight: 700,
                 fontSize: 'clamp(14px, 1.5vw, 18px)',
-                color: 'rgba(0,0,0,0.18)',
+                color: 'rgba(0,0,0,0.45)',
                 letterSpacing: '-0.02em',
                 whiteSpace: 'nowrap',
               }}

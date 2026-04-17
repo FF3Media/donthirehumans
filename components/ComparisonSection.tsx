@@ -86,7 +86,7 @@ export default function ComparisonSection() {
               marginBottom: '12px',
             }}
           >
-            WHY NOT JUST USE A $39/MO AI TOOL?
+            FRANK MEDIA VS. EVERYTHING ELSE.
           </h2>
           <p style={{ fontFamily: 'var(--font-display)', fontSize: '13px', color: 'var(--color-muted)', lineHeight: 1.7, maxWidth: '560px' }}>
             Tools give you software and a tutorial. We give you done. The difference is who logs in.

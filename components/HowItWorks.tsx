@@ -162,6 +162,36 @@ export default function HowItWorks() {
             ))}
           </div>
         </div>
+
+        {/* CTA */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-80px' }}
+          transition={{ duration: 0.5, delay: 0.4 }}
+          style={{ marginTop: 'clamp(48px, 6vw, 80px)' }}
+        >
+          <a
+            href="/contact"
+            style={{
+              display: 'inline-block',
+              fontFamily: 'var(--font-display)',
+              fontWeight: 500,
+              fontSize: '16px',
+              letterSpacing: '-0.01em',
+              color: '#fff',
+              backgroundColor: 'var(--color-accent)',
+              padding: '16px 36px',
+              borderRadius: '980px',
+              textDecoration: 'none',
+              transition: 'opacity 200ms',
+            }}
+            onMouseEnter={(e) => { e.currentTarget.style.opacity = '0.85' }}
+            onMouseLeave={(e) => { e.currentTarget.style.opacity = '1' }}
+          >
+            Sounds good. Let&apos;s go →
+          </a>
+        </motion.div>
       </div>
 
     </section>
