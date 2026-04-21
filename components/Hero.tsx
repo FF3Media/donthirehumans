@@ -1,9 +1,19 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import Image from 'next/image'
 
-const agentColors = ['#E8F5E9','#E3F2FD','#FFF3E0','#FCE4EC','#F3E5F5','#E0F7FA','#FFF8E1','#F1F8E9','#EDE7F6']
-const agentLabels = ['Frank','Musa','Emmy','Clark','Barry','Bruce','Vera','Hannah','Eve']
+const agents = [
+  { label: 'Frank',  avatar: '/Frank.png'  },
+  { label: 'Musa',   avatar: '/Musa.png'   },
+  { label: 'Emmy',   avatar: '/Emmy.png'   },
+  { label: 'Clark',  avatar: '/Clark.png'  },
+  { label: 'Barry',  avatar: '/Barry.png'  },
+  { label: 'Bruce',  avatar: '/Bruce.png'  },
+  { label: 'Vera',   avatar: '/Vera.png'   },
+  { label: 'Hannah', avatar: '/Hannah.png' },
+  { label: 'Eve',    avatar: '/Evie.png'   },
+]
 
 const positions = [
   { x: '4%',  y: '15%' }, { x: '88%', y: '10%' }, { x: '15%', y: '62%' },
@@ -11,7 +21,7 @@ const positions = [
   { x: '61%', y: '71%' }, { x: '2%',  y: '44%' }, { x: '91%', y: '38%' },
 ]
 
-function FloatingAgent({ x, y, delay, color, label }: { x: string; y: string; delay: number; color: string; label: string }) {
+function FloatingAgent({ x, y, delay, avatar, label }: { x: string; y: string; delay: number; avatar: string; label: string }) {
   return (
     <motion.div
       animate={{ y: ['0px', '-14px', '0px'] }}
@@ -19,13 +29,22 @@ function FloatingAgent({ x, y, delay, color, label }: { x: string; y: string; de
       style={{ position: 'absolute', left: x, top: y, textAlign: 'center', zIndex: 1 }}
     >
       <div style={{
-        width: '52px',
-        height: '52px',
-        borderRadius: '14px',
-        backgroundColor: color,
+        width: '64px',
+        height: '64px',
+        borderRadius: '16px',
+        overflow: 'hidden',
         border: '1px solid rgba(0,0,0,0.08)',
-        marginBottom: '4px',
-      }} />
+        marginBottom: '6px',
+        backgroundColor: '#F0F0F3',
+      }}>
+        <Image
+          src={avatar}
+          alt={label}
+          width={64}
+          height={64}
+          style={{ width: '100%', height: '100%', objectFit: 'cover', imageRendering: 'pixelated' }}
+        />
+      </div>
       <span style={{
         fontFamily: 'var(--font-display)',
         fontSize: '10px',
@@ -60,8 +79,8 @@ export default function Hero() {
           x={p.x}
           y={p.y}
           delay={i * 0.3}
-          color={agentColors[i]}
-          label={agentLabels[i]}
+          avatar={agents[i].avatar}
+          label={agents[i].label}
         />
       ))}
 
