@@ -143,7 +143,7 @@ export default function Hero() {
           zIndex: 2,
         }}
       >
-        AI Agents that work 24/7. No sick days. No holidays. No slack messages. Fully managed by Frank Media. You do nothing.
+        Push a button, run your business.
       </motion.p>
 
       {/* CTA row */}
