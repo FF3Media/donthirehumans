@@ -6,14 +6,7 @@ import { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Blog | Frank Media',
-  description: 'Insights on AI agents, email marketing, SEO, and what\'s actually working for DTC brands right now.',
-}
-
-const categoryColors: Record<string, string> = {
-  'Email': 'rgba(36,138,61,0.1)',
-  'SEO + GEO': 'rgba(36,138,61,0.1)',
-  'Agency vs AI': 'rgba(36,138,61,0.1)',
-  'AI Strategy': 'rgba(36,138,61,0.1)',
+  description: "Insights on AI agents, email marketing, SEO, and what's actually working for DTC brands right now.",
 }
 
 export default function BlogPage() {
@@ -71,18 +64,14 @@ export default function BlogPage() {
             href={`/blog/${featured.slug}`}
             style={{ textDecoration: 'none', display: 'block', marginBottom: 'clamp(40px, 5vw, 64px)' }}
           >
-            <div
-              style={{
-                backgroundColor: 'var(--color-surface)',
-                borderRadius: '20px',
-                padding: 'clamp(32px, 5vw, 56px)',
-                border: '1px solid rgba(0,0,0,0.07)',
-                transition: 'border-color 200ms',
-                cursor: 'pointer',
-              }}
-              onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.borderColor = 'rgba(36,138,61,0.35)' }}
-              onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.borderColor = 'rgba(0,0,0,0.07)' }}
-            >
+            <div className="blog-card" style={{
+              backgroundColor: 'var(--color-surface)',
+              borderRadius: '20px',
+              padding: 'clamp(32px, 5vw, 56px)',
+              border: '1px solid rgba(0,0,0,0.07)',
+              transition: 'border-color 200ms',
+              cursor: 'pointer',
+            }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '20px' }}>
                 <span style={{
                   fontFamily: 'var(--font-display)',
@@ -91,7 +80,7 @@ export default function BlogPage() {
                   color: 'var(--color-accent)',
                   letterSpacing: '0.08em',
                   textTransform: 'uppercase',
-                  backgroundColor: categoryColors[featured.category] || 'rgba(36,138,61,0.1)',
+                  backgroundColor: 'rgba(36,138,61,0.1)',
                   padding: '4px 10px',
                   borderRadius: '980px',
                 }}>
@@ -151,21 +140,17 @@ export default function BlogPage() {
                 href={`/blog/${post.slug}`}
                 style={{ textDecoration: 'none' }}
               >
-                <div
-                  style={{
-                    backgroundColor: 'var(--color-surface)',
-                    borderRadius: '16px',
-                    padding: 'clamp(24px, 3vw, 32px)',
-                    border: '1px solid rgba(0,0,0,0.07)',
-                    height: '100%',
-                    display: 'flex',
-                    flexDirection: 'column',
-                    transition: 'border-color 200ms',
-                    cursor: 'pointer',
-                  }}
-                  onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.borderColor = 'rgba(36,138,61,0.35)' }}
-                  onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.borderColor = 'rgba(0,0,0,0.07)' }}
-                >
+                <div className="blog-card" style={{
+                  backgroundColor: 'var(--color-surface)',
+                  borderRadius: '16px',
+                  padding: 'clamp(24px, 3vw, 32px)',
+                  border: '1px solid rgba(0,0,0,0.07)',
+                  height: '100%',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  transition: 'border-color 200ms',
+                  cursor: 'pointer',
+                }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '16px' }}>
                     <span style={{
                       fontFamily: 'var(--font-display)',

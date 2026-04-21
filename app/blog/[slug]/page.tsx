@@ -36,7 +36,7 @@ export default function PostPage({ params }: { params: { slug: string } }) {
         <div style={{ maxWidth: '720px', margin: '0 auto', padding: '0 clamp(24px, 5vw, 48px)' }}>
 
           {/* Back */}
-          <Link href="/blog" style={{
+          <Link href="/blog" className="blog-back" style={{
             display: 'inline-flex',
             alignItems: 'center',
             gap: '6px',
@@ -46,10 +46,7 @@ export default function PostPage({ params }: { params: { slug: string } }) {
             textDecoration: 'none',
             marginBottom: '40px',
             transition: 'color 200ms',
-          }}
-          onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.color = 'var(--color-text)' }}
-          onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.color = 'var(--color-muted)' }}
-          >
+          }}>
             ← Blog
           </Link>
 
@@ -132,6 +129,7 @@ export default function PostPage({ params }: { params: { slug: string } }) {
             </p>
             <a
               href="/contact"
+              className="blog-cta"
               style={{
                 display: 'inline-block',
                 fontFamily: 'var(--font-display)',
@@ -144,8 +142,6 @@ export default function PostPage({ params }: { params: { slug: string } }) {
                 textDecoration: 'none',
                 transition: 'opacity 200ms',
               }}
-              onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.opacity = '0.85' }}
-              onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.opacity = '1' }}
             >
               Book free audit →
             </a>
@@ -168,7 +164,7 @@ export default function PostPage({ params }: { params: { slug: string } }) {
               <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
                 {related.map((r) => (
                   <Link key={r.slug} href={`/blog/${r.slug}`} style={{ textDecoration: 'none' }}>
-                    <div style={{
+                    <div className="blog-card" style={{
                       padding: '20px 24px',
                       backgroundColor: 'var(--color-surface)',
                       borderRadius: '14px',
@@ -178,10 +174,7 @@ export default function PostPage({ params }: { params: { slug: string } }) {
                       alignItems: 'center',
                       gap: '16px',
                       transition: 'border-color 200ms',
-                    }}
-                    onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.borderColor = 'rgba(36,138,61,0.35)' }}
-                    onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.borderColor = 'rgba(0,0,0,0.07)' }}
-                    >
+                    }}>
                       <div>
                         <p style={{
                           fontFamily: 'var(--font-display)',

@@ -64,6 +64,17 @@ body::before {
   will-change: transform;
 }
 
+/* Blog hover states */
+.blog-card:hover {
+  border-color: rgba(36,138,61,0.35) !important;
+}
+.blog-back:hover {
+  color: var(--color-text) !important;
+}
+.blog-cta:hover {
+  opacity: 0.85 !important;
+}
+
 /* Blog post body styles */
 .prose h2 {
   font-family: var(--font-display);
