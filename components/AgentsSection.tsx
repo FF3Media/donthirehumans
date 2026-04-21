@@ -14,6 +14,13 @@ const agents = [
     avatar: '/Frank.png',
   },
   {
+    id: 'emmy',
+    name: 'Emmy',
+    role: 'Email Marketing Agent',
+    description: 'Emmy builds, sends, and optimises your entire email programme. From welcome flows to win-back campaigns. She studies your data, segments your list, writes the copy, and drives revenue while you sleep.',
+    avatar: '/Emmy.png',
+  },
+  {
     id: 'musa',
     name: 'Musa',
     role: 'Paid Search Agent',
@@ -21,11 +28,11 @@ const agents = [
     avatar: '/Musa.png',
   },
   {
-    id: 'emmy',
-    name: 'Emmy',
-    role: 'Email Marketing Agent',
-    description: 'Emmy builds, sends, and optimises your entire email programme. From welcome flows to win-back campaigns. She studies your data, segments your list, writes the copy, and drives revenue while you sleep.',
-    avatar: '/Emmy.png',
+    id: 'barry',
+    name: 'Barry',
+    role: 'Social Media Agent',
+    description: 'Barry keeps your brand active and consistent across every platform. He writes the captions, schedules the posts, engages with comments, and grows your audience while you focus on the business.',
+    avatar: '/Barry.png',
   },
   {
     id: 'clark',
@@ -35,11 +42,11 @@ const agents = [
     avatar: '/Clark.png',
   },
   {
-    id: 'barry',
-    name: 'Barry',
-    role: 'Social Media Agent',
-    description: 'Barry keeps your brand active and consistent across every platform. He writes the captions, schedules the posts, engages with comments, and grows your audience while you focus on the business.',
-    avatar: '/Barry.png',
+    id: 'hannah',
+    name: 'Hannah',
+    role: 'Content & Copy Agent',
+    description: 'Hannah writes everything your brand needs to say. Product descriptions, blog posts, ad copy, landing pages. Consistent brand voice, every time, at a pace no human writer can match.',
+    avatar: '/Hannah.png',
   },
   {
     id: 'bruce',
@@ -54,13 +61,6 @@ const agents = [
     role: 'Reputation Management Agent',
     description: 'Vera monitors every review across Google, Trustpilot, and your site. She responds, flags issues, follows up after purchases, and keeps your brand reputation spotless.',
     avatar: '/Vera.png',
-  },
-  {
-    id: 'hannah',
-    name: 'Hannah',
-    role: 'Content & Copy Agent',
-    description: 'Hannah writes everything your brand needs to say. Product descriptions, blog posts, ad copy, landing pages. Consistent brand voice, every time, at a pace no human writer can match.',
-    avatar: '/Hannah.png',
   },
   {
     id: 'eve',
