@@ -91,9 +91,10 @@ export default function Footer() {
               COMPANY
             </div>
             {[
-              { label: 'How It Works', href: '#how-it-works' },
-              { label: 'Pricing', href: '#pricing' },
-              { label: 'Book an Audit', href: '#pricing' },
+              { label: 'How It Works', href: '/#how-it-works' },
+              { label: 'Pricing', href: '/#pricing' },
+              { label: 'Blog', href: '/blog' },
+              { label: 'Book an Audit', href: '/contact' },
             ].map((item) => (
               <a
                 key={item.label}

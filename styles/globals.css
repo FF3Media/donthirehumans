@@ -64,6 +64,33 @@ body::before {
   will-change: transform;
 }
 
+/* Blog post body styles */
+.prose h2 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(20px, 2.5vw, 26px);
+  letter-spacing: -0.03em;
+  color: var(--color-text);
+  margin-top: 48px;
+  margin-bottom: 16px;
+  line-height: 1.2;
+}
+.prose p {
+  margin-bottom: 20px;
+}
+.prose ul, .prose ol {
+  margin-bottom: 20px;
+  padding-left: 22px;
+}
+.prose li {
+  margin-bottom: 8px;
+  line-height: 1.7;
+}
+.prose strong {
+  font-weight: 700;
+  color: var(--color-text);
+}
+
 /* Focus states */
 a:focus-visible,
 button:focus-visible {

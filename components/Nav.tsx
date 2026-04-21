@@ -50,6 +50,24 @@ export default function Nav() {
           Frank Media
         </a>
 
+        {/* Blog link */}
+        <a
+          href="/blog"
+          style={{
+            fontFamily: 'var(--font-display)',
+            fontWeight: 500,
+            fontSize: '14px',
+            letterSpacing: '-0.01em',
+            color: 'var(--color-text)',
+            textDecoration: 'none',
+            transition: 'opacity 200ms',
+          }}
+          onMouseEnter={(e) => { e.currentTarget.style.opacity = '0.55' }}
+          onMouseLeave={(e) => { e.currentTarget.style.opacity = '1' }}
+        >
+          Blog
+        </a>
+
         {/* CTA — pill */}
         <a
           href="/contact"
