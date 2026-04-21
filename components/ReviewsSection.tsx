@@ -10,7 +10,7 @@ const reviews = [
     stars: 5,
   },
   {
-    quote: 'Emmy sends better emails than any copywriter we have ever hired. She tests, learns, and improves every single week. Our email revenue is up 40%.',
+    quote: 'Emmy segmented our list by purchase behaviour, rebuilt our sender reputation from scratch, and added flows we didn\'t even know we were missing. Email went from 12% of revenue to 34% in three months. She pays for herself every week.',
     author: 'Priya S.',
     brand: 'Head of Growth, Lune Skincare',
     stars: 5,
