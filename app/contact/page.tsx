@@ -6,15 +6,34 @@ import Footer from '@/components/Footer'
 
 export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false)
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState(false)
   const [form, setForm] = useState({ name: '', email: '', brand: '', revenue: '', message: '' })
 
   function handleChange(e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) {
     setForm({ ...form, [e.target.name]: e.target.value })
   }
 
-  function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
-    setSubmitted(true)
+    setLoading(true)
+    setError(false)
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(form),
+      })
+      if (res.ok) {
+        setSubmitted(true)
+      } else {
+        setError(true)
+      }
+    } catch {
+      setError(true)
+    } finally {
+      setLoading(false)
+    }
   }
 
   return (
@@ -187,8 +206,19 @@ export default function ContactPage() {
                   />
                 </div>
 
+                {error && (
+                  <p style={{
+                    fontFamily: 'var(--font-display)',
+                    fontSize: '13px',
+                    color: 'rgba(200,50,50,0.9)',
+                    letterSpacing: '-0.01em',
+                  }}>
+                    Something went wrong. Please try again or email us at ff@ff3media.com
+                  </p>
+                )}
                 <button
                   type="submit"
+                  disabled={loading}
                   style={{
                     marginTop: '8px',
                     fontFamily: 'var(--font-display)',
@@ -200,11 +230,13 @@ export default function ContactPage() {
                     border: 'none',
                     padding: '16px 32px',
                     borderRadius: '980px',
-                    cursor: 'pointer',
+                    cursor: loading ? 'not-allowed' : 'pointer',
+                    opacity: loading ? 0.6 : 1,
                     width: '100%',
+                    transition: 'opacity 200ms',
                   }}
                 >
-                  Get my free audit
+                  {loading ? 'Sending...' : 'Get my free audit'}
                 </button>
 
               </form>

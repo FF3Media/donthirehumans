@@ -3,8 +3,8 @@ import { NextRequest, NextResponse } from 'next/server'
 const PASSWORD = process.env.SITE_PASSWORD || 'frankmedia2024'
 
 export function middleware(req: NextRequest) {
-  // Allow the password check endpoint through
-  if (req.nextUrl.pathname === '/api/auth') {
+  // Allow API endpoints through
+  if (req.nextUrl.pathname.startsWith('/api/')) {
     return NextResponse.next()
   }
 
