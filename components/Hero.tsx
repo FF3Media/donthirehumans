@@ -5,55 +5,15 @@ import Image from 'next/image'
 
 const agents = [
   { label: 'Frank',  avatar: '/Frank.png'  },
-  { label: 'Musa',   avatar: '/Musa.png'   },
   { label: 'Emmy',   avatar: '/Emmy.png'   },
-  { label: 'Clark',  avatar: '/Clark.png'  },
+  { label: 'Musa',   avatar: '/Musa.png'   },
   { label: 'Barry',  avatar: '/Barry.png'  },
+  { label: 'Clark',  avatar: '/Clark.png'  },
+  { label: 'Hannah', avatar: '/Hannah.png' },
   { label: 'Bruce',  avatar: '/Bruce.png'  },
   { label: 'Vera',   avatar: '/Vera.png'   },
-  { label: 'Hannah', avatar: '/Hannah.png' },
   { label: 'Eve',    avatar: '/Evie.png'   },
 ]
-
-const positions = [
-  { x: '4%',  y: '15%' }, { x: '88%', y: '10%' }, { x: '15%', y: '62%' },
-  { x: '79%', y: '56%' }, { x: '46%', y: '4%'  }, { x: '30%', y: '74%' },
-  { x: '61%', y: '71%' }, { x: '2%',  y: '44%' }, { x: '91%', y: '38%' },
-]
-
-function FloatingAgent({ x, y, delay, avatar, label }: { x: string; y: string; delay: number; avatar: string; label: string }) {
-  return (
-    <motion.div
-      animate={{ y: ['0px', '-14px', '0px'] }}
-      transition={{ duration: 3.5 + delay * 0.4, repeat: Infinity, ease: 'easeInOut', delay }}
-      style={{ position: 'absolute', left: x, top: y, textAlign: 'center', zIndex: 1 }}
-    >
-      <div style={{
-        width: '64px',
-        height: '64px',
-        borderRadius: '16px',
-        overflow: 'hidden',
-        border: '1px solid rgba(0,0,0,0.08)',
-        marginBottom: '6px',
-        backgroundColor: '#F0F0F3',
-      }}>
-        <Image
-          src={avatar}
-          alt={label}
-          width={64}
-          height={64}
-          style={{ width: '100%', height: '100%', objectFit: 'cover', imageRendering: 'pixelated' }}
-        />
-      </div>
-      <span style={{
-        fontFamily: 'var(--font-display)',
-        fontSize: '10px',
-        color: 'var(--color-muted)',
-        fontWeight: 500,
-      }}>{label}</span>
-    </motion.div>
-  )
-}
 
 export default function Hero() {
   return (
@@ -61,7 +21,7 @@ export default function Hero() {
       aria-label="Hero"
       style={{
         minHeight: '100vh',
-        backgroundColor: 'var(--color-surface)',
+        backgroundColor: 'var(--color-bg)',
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
@@ -72,17 +32,17 @@ export default function Hero() {
         overflow: 'hidden',
       }}
     >
-      {/* Floating agents */}
-      {positions.map((p, i) => (
-        <FloatingAgent
-          key={i}
-          x={p.x}
-          y={p.y}
-          delay={i * 0.3}
-          avatar={agents[i].avatar}
-          label={agents[i].label}
-        />
-      ))}
+      {/* Subtle glow */}
+      <div style={{
+        position: 'absolute',
+        top: '40%',
+        left: '50%',
+        transform: 'translate(-50%, -50%)',
+        width: '700px',
+        height: '700px',
+        background: 'radial-gradient(circle, rgba(36,138,61,0.06) 0%, transparent 70%)',
+        pointerEvents: 'none',
+      }} />
 
       {/* Headline */}
       <h1 style={{ margin: 0, maxWidth: '960px', position: 'relative', zIndex: 2 }}>
@@ -107,7 +67,7 @@ export default function Hero() {
         ))}
       </h1>
 
-      {/* Zero salaries tag */}
+      {/* Zero salaries */}
       <motion.div
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
@@ -121,36 +81,15 @@ export default function Hero() {
           color: 'var(--color-muted)',
           letterSpacing: '-0.02em',
         }}>
-          Zero salaries.
+          Push a button, run your business.
         </span>
       </motion.div>
-
-      {/* Subline */}
-      <motion.p
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7, ease: 'easeOut', delay: 0.5 }}
-        style={{
-          fontFamily: 'var(--font-display)',
-          fontWeight: 400,
-          fontSize: 'clamp(16px, 1.6vw, 20px)',
-          color: 'var(--color-muted)',
-          maxWidth: '540px',
-          lineHeight: 1.6,
-          marginTop: 'clamp(16px, 2.5vw, 28px)',
-          letterSpacing: '-0.01em',
-          position: 'relative',
-          zIndex: 2,
-        }}
-      >
-        Push a button, run your business.
-      </motion.p>
 
       {/* CTA row */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, ease: 'easeOut', delay: 0.56 }}
+        transition={{ duration: 0.6, ease: 'easeOut', delay: 0.5 }}
         style={{
           marginTop: 'clamp(28px, 4vw, 44px)',
           display: 'flex',
@@ -208,27 +147,70 @@ export default function Hero() {
         </a>
       </motion.div>
 
-      {/* Social proof */}
+      {/* Overlapping avatar row */}
       <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.6, delay: 0.72 }}
+        initial={{ opacity: 0, y: 16 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.65 }}
         style={{
+          marginTop: 'clamp(32px, 5vw, 52px)',
           display: 'flex',
+          flexDirection: 'column',
           alignItems: 'center',
-          gap: '28px',
-          flexWrap: 'wrap',
-          justifyContent: 'center',
-          marginTop: '24px',
+          gap: '14px',
           position: 'relative',
           zIndex: 2,
         }}
       >
-        {['Starts at $750/mo', 'Live in 7 days', 'Cancel anytime'].map((item, i) => (
-          <span key={i} style={{ fontFamily: 'var(--font-display)', fontSize: '12px', color: 'var(--color-muted)', letterSpacing: '0.02em' }}>
-            {item}
-          </span>
-        ))}
+        {/* Avatars */}
+        <div style={{ display: 'flex', alignItems: 'center' }}>
+          {agents.map((agent, i) => (
+            <div
+              key={agent.label}
+              title={agent.label}
+              style={{
+                width: '44px',
+                height: '44px',
+                borderRadius: '50%',
+                overflow: 'hidden',
+                border: '2.5px solid var(--color-bg)',
+                backgroundColor: '#E8E8ED',
+                marginLeft: i === 0 ? 0 : '-12px',
+                position: 'relative',
+                zIndex: agents.length - i,
+                transition: 'transform 200ms, z-index 0ms',
+              }}
+              onMouseEnter={(e) => {
+                (e.currentTarget as HTMLElement).style.transform = 'translateY(-4px) scale(1.1)'
+                ;(e.currentTarget as HTMLElement).style.zIndex = '99'
+              }}
+              onMouseLeave={(e) => {
+                (e.currentTarget as HTMLElement).style.transform = 'translateY(0) scale(1)'
+                ;(e.currentTarget as HTMLElement).style.zIndex = String(agents.length - i)
+              }}
+            >
+              <Image
+                src={agent.avatar}
+                alt={agent.label}
+                width={44}
+                height={44}
+                style={{ width: '100%', height: '100%', objectFit: 'cover', imageRendering: 'pixelated' }}
+              />
+            </div>
+          ))}
+        </div>
+
+        {/* Label */}
+        <p style={{
+          fontFamily: 'var(--font-display)',
+          fontSize: '13px',
+          color: 'var(--color-muted)',
+          letterSpacing: '-0.01em',
+          margin: 0,
+        }}>
+          9 agents. Fully managed. Starts at{' '}
+          <span style={{ color: 'var(--color-text)', fontWeight: 600 }}>$750/mo</span>
+        </p>
       </motion.div>
     </section>
   )
