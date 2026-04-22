@@ -192,17 +192,17 @@ export default function Hero() {
             fontSize: '16px',
             letterSpacing: '-0.01em',
             color: 'var(--color-text)',
-            backgroundColor: 'rgba(0,0,0,0.06)',
-            border: 'none',
+            backgroundColor: 'transparent',
+            border: '1.5px solid rgba(0,0,0,0.18)',
             padding: '16px 32px',
             borderRadius: '980px',
             cursor: 'pointer',
             textDecoration: 'none',
-            transition: 'background 200ms',
+            transition: 'border-color 200ms, background 200ms',
             display: 'inline-block',
           }}
-          onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = 'rgba(0,0,0,0.1)' }}
-          onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = 'rgba(0,0,0,0.06)' }}
+          onMouseEnter={(e) => { e.currentTarget.style.borderColor = 'rgba(0,0,0,0.4)'; e.currentTarget.style.backgroundColor = 'rgba(0,0,0,0.04)' }}
+          onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'rgba(0,0,0,0.18)'; e.currentTarget.style.backgroundColor = 'transparent' }}
         >
           Meet the Agents
         </a>
