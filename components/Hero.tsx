@@ -209,7 +209,7 @@ export default function Hero() {
           margin: 0,
         }}>
           9 agents. Fully managed. Starts at{' '}
-          <span style={{ color: 'var(--color-text)', fontWeight: 600 }}>$750/mo</span>
+          <span style={{ color: 'var(--color-text)', fontWeight: 600 }}>$1,200/mo</span>
         </p>
       </motion.div>
     </section>

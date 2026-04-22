@@ -147,7 +147,7 @@ export default function StatSection() {
           style={{ textAlign: 'center', marginTop: 'clamp(32px, 5vw, 56px)' }}
         >
           <p style={{ fontFamily: 'var(--font-display)', fontSize: '13px', color: 'var(--color-accent)', letterSpacing: '0.05em' }}>
-            Our agents start at $750/mo.
+            Our agents start at $1,200/mo.
           </p>
           <p style={{ fontFamily: 'var(--font-display)', fontSize: '11px', color: 'var(--color-muted)', marginTop: '10px', letterSpacing: '0.05em' }}>
             No retainer. No headcount. No bullshit.

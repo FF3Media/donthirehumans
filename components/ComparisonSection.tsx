@@ -9,7 +9,7 @@ const rows = [
     label: 'Monthly cost',
     agency: '$8,000 – $25,000',
     diy: '$39 – $800',
-    frank: '$750 – $2,000',
+    frank: '$1,200 – $2,500',
   },
   {
     label: 'Time to launch',

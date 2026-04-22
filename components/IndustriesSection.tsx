@@ -117,24 +117,33 @@ export default function IndustriesSection() {
       <div style={{ maxWidth: '1200px', margin: '0 auto', position: 'relative' }}>
 
         {/* Section label */}
-        <motion.p
+        <motion.div
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          style={{
+          style={{ textAlign: 'center', marginBottom: '32px' }}
+        >
+          <p style={{
             fontFamily: 'var(--font-display)',
             fontWeight: 500,
             fontSize: '12px',
             color: 'var(--color-accent)',
             letterSpacing: '0.1em',
             textTransform: 'uppercase',
-            textAlign: 'center',
-            marginBottom: '40px',
-          }}
-        >
-          Built for your business
-        </motion.p>
+            marginBottom: '12px',
+          }}>
+            Built for your business
+          </p>
+          <p style={{
+            fontFamily: 'var(--font-display)',
+            fontSize: '13px',
+            color: 'rgba(255,255,255,0.35)',
+            letterSpacing: '-0.01em',
+          }}>
+            Select your industry ↓
+          </p>
+        </motion.div>
 
         {/* Tab switcher */}
         <motion.div
@@ -145,9 +154,15 @@ export default function IndustriesSection() {
           style={{
             display: 'flex',
             justifyContent: 'center',
-            gap: '8px',
+            gap: '0',
             marginBottom: 'clamp(48px, 6vw, 72px)',
             flexWrap: 'wrap',
+            backgroundColor: 'rgba(255,255,255,0.06)',
+            borderRadius: '14px',
+            padding: '5px',
+            width: 'fit-content',
+            margin: '0 auto clamp(48px, 6vw, 72px)',
+            border: '1px solid rgba(255,255,255,0.1)',
           }}
         >
           {industries.map(ind => (
@@ -156,16 +171,23 @@ export default function IndustriesSection() {
               onClick={() => setActive(ind.id)}
               style={{
                 fontFamily: 'var(--font-display)',
-                fontWeight: 500,
+                fontWeight: active === ind.id ? 600 : 500,
                 fontSize: '15px',
                 letterSpacing: '-0.01em',
-                padding: '10px 22px',
-                borderRadius: '980px',
-                border: active === ind.id ? 'none' : '1px solid rgba(255,255,255,0.15)',
+                padding: '12px 28px',
+                borderRadius: '10px',
+                border: 'none',
                 backgroundColor: active === ind.id ? 'var(--color-accent)' : 'transparent',
-                color: active === ind.id ? '#fff' : 'rgba(255,255,255,0.5)',
+                color: active === ind.id ? '#fff' : 'rgba(255,255,255,0.65)',
                 cursor: 'pointer',
                 transition: 'all 200ms ease',
+                whiteSpace: 'nowrap',
+              }}
+              onMouseEnter={(e) => {
+                if (active !== ind.id) (e.currentTarget as HTMLElement).style.color = '#fff'
+              }}
+              onMouseLeave={(e) => {
+                if (active !== ind.id) (e.currentTarget as HTMLElement).style.color = 'rgba(255,255,255,0.65)'
               }}
             >
               {ind.label}

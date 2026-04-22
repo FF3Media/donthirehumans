@@ -19,11 +19,11 @@ const dmMono = DM_Mono({
 export const metadata: Metadata = {
   title: "AI Agents that power your business. | Frank Media",
   description:
-    'AI marketing agents that replace your entire marketing department. Email and SEO agents for DTC brands. Starts at $750/mo. No contracts. Fully managed.',
+    'AI marketing agents that replace your entire marketing department. Email and SEO agents for DTC brands. Starts at $1,200/mo. No contracts. Fully managed.',
   openGraph: {
     title: "AI Agents that power your business. | Frank Media",
     description:
-      'AI marketing agents that replace your entire marketing department. Email and SEO agents for DTC brands. Starts at $750/mo. No contracts. Fully managed.',
+      'AI marketing agents that replace your entire marketing department. Email and SEO agents for DTC brands. Starts at $1,200/mo. No contracts. Fully managed.',
     url: 'https://frankmedia.co',
     siteName: 'Frank Media',
     locale: 'en_US',
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: "AI Agents that power your business. | Frank Media",
     description:
-      'AI marketing agents that replace your entire marketing department. Email and SEO agents for DTC brands. Starts at $750/mo.',
+      'AI marketing agents that replace your entire marketing department. Email and SEO agents for DTC brands. Starts at $1,200/mo.',
   },
   metadataBase: new URL('https://frankmedia.co'),
 }

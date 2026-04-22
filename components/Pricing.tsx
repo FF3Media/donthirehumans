@@ -45,7 +45,7 @@ const plans = [
     id: 'plan-01',
     label: 'PLAN 01',
     name: 'REVENUE',
-    price: '$750',
+    price: '$1,200',
     period: '/mo',
     features: [
       'Email Agent fully managed',
@@ -61,7 +61,7 @@ const plans = [
     id: 'plan-02',
     label: 'PLAN 02',
     name: 'VISIBILITY',
-    price: '$1,000',
+    price: '$1,500',
     period: '/mo',
     features: [
       'SEO + GEO Agent fully managed',
@@ -78,7 +78,7 @@ const plans = [
     id: 'plan-03',
     label: 'PLAN 03',
     name: 'GROWTH',
-    price: '$2,000',
+    price: '$2,500',
     period: '/mo',
     features: [
       'Email Agent + SEO/GEO Agent',

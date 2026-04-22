@@ -172,7 +172,7 @@ export default function ReviewsSection() {
             marginTop: '12px',
             letterSpacing: '-0.01em',
           }}>
-            Starts at $750/mo. Live in 7 days. Cancel anytime.
+            Starts at $1,200/mo. Live in 7 days. Cancel anytime.
           </p>
         </motion.div>
       </div>

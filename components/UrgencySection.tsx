@@ -160,7 +160,7 @@ export default function UrgencySection() {
             marginTop: '14px',
             letterSpacing: '-0.01em',
           }}>
-            Starts at $750/mo. Live in 7 days.
+            Starts at $1,200/mo. Live in 7 days.
           </p>
         </motion.div>
 

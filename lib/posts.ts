@@ -150,9 +150,9 @@ export const posts: Post[] = [
 
 <h2>What AI agents actually cost</h2>
 
-<p>Frank Media's email agent: $750/month. That's it. It runs your email operation — flows, campaigns, segmentation, reporting — 24 hours a day. It doesn't bill for hours. It doesn't go on vacation. It doesn't quit.</p>
+<p>Frank Media's email agent: $1,200/month. That's it. It runs your email operation — flows, campaigns, segmentation, reporting — 24 hours a day. It doesn't bill for hours. It doesn't go on vacation. It doesn't quit.</p>
 
-<p>The Growth Bundle (email + SEO + GEO): $2,000/month. Full execution across your two most important owned channels, fully managed.</p>
+<p>The Growth Bundle (email + SEO + GEO): $2,500/month. Full execution across your two most important owned channels, fully managed.</p>
 
 <p>The question isn't whether AI agents are as good as a great agency. The question is whether they're better than what you're actually getting — a stretched junior team working from templates, costing you $8,000–$25,000 a month, plus your time, plus the ramp, plus the turnover.</p>
 
